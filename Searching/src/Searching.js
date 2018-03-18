@@ -1,42 +1,7 @@
 MIN_VALUE = -999999
 
-mainbuggy = function (args) {
     var first = [1, 3, 5, 7, 9, 25, 30];
-    var second = [2, 4, 6, 8, 10, 12, 14, 16, 21, 23, 24];
-    for (var i = 1; i < 16; i++) {
-        console.info("Index : " + i + " Value : ");
-        console.info(findkth(first, second, i));
-    }
-};
-
-findkth = function (first, second, k) {// buggy
-    var sizeFirst = first.length;
-    var sizeSecond = second.length;
-    if (sizeFirst + sizeSecond < k) {
-        return MAX_VALUE;
-    }
-    if (k === 1) {
-        return min(first[0], second[0]);
-    }
-    var i = min(sizeFirst, Math.floor(k / 2));
-    var j = min(sizeSecond, k - i);
-    var step = max(1, Math.floor(min(i, j) / 2));
-    while ((step > 0)) {
-        if (first[i - 1] > second[j - 1] && first[i - 1] > second[min(second.length, j + step) - 1]) {
-            j = min(second.length, j + step);
-            i = k - j;
-        }
-        else if (first[i - 1] < second[j - 1] && first[min(first.length, i + step) - 1] < second[j - 1]) {
-            i = min(first.length, i + step);
-            j = k - i;
-        }
-        step = Math.floor(step / 2);
-    }
-    ;
-    return max(first[i - 1], second[j - 1]);
-};
-
-linearSearchUnsorted = function (arr, value) {
+function linearSearchUnsorted(arr, value) {
     var i = 0;
     var size = arr.length;
     for (i = 0; i < size; i++) {
@@ -47,7 +12,7 @@ linearSearchUnsorted = function (arr, value) {
     return false;
 };
 
-linearSearchSorted = function (arr, value) {
+function linearSearchSorted(arr, value) {
     var i = 0;
     var size = arr.length;
     for (i = 0; i < size; i++) {
@@ -61,7 +26,7 @@ linearSearchSorted = function (arr, value) {
     return false;
 };
 
-Binarysearch = function (arr, value) {
+function Binarysearch(arr, value) {
     var low = 0;
     var high = arr.length - 1;
     var mid;
@@ -80,11 +45,11 @@ Binarysearch = function (arr, value) {
     return false;
 };
 
-BinarySearchRecursive = function (arr, value) {
+function BinarySearchRecursive(arr, value) {
     return BinarySearchRecursiveUtil(arr, 0, arr.length - 1, value);
 }
 
-BinarySearchRecursiveUtil = function (arr, low, high, value) {
+function BinarySearchRecursiveUtil(arr, low, high, value) {
     if (low > high) {
         return false;
     }
@@ -100,71 +65,71 @@ BinarySearchRecursiveUtil = function (arr, low, high, value) {
     }
 };
 
-main1 = function (args) {
+function main1(args) {
     var first = [1, 3, 5, 7, 6, 4, 2];
     var second = [2, 4, 6, 8, 10, 12, 14, 16, 21, 23, 24];
-    console.info(linearSearchUnsorted(first, 7));
-    console.info(linearSearchUnsorted(first, 9));
-    console.info(linearSearchSorted(second, 8));
-    console.info(linearSearchSorted(second, 9));
-    console.info(Binarysearch(second, 10));
-    console.info(BinarySearchRecursive(second, 10));
+    console.log(linearSearchUnsorted(first, 7));
+    console.log(linearSearchUnsorted(first, 9));
+    console.log(linearSearchSorted(second, 8));
+    console.log(linearSearchSorted(second, 9));
+    console.log(Binarysearch(second, 10));
+    console.log(BinarySearchRecursive(second, 10));
 };
 
-printRepeating = function (arr) {
+function printRepeating(arr) {
     var i;
     var j;
     var size = arr.length;
-    console.info(" Repeating elements are ");
+    console.log(" Repeating elements are ");
     for (i = 0; i < size; i++) {
         for (j = i + 1; j < size; j++) {
             if (arr[i] === arr[j]) {
-                console.info(arr[i]);
+                console.log(arr[i]);
             }
         }
     }
 };
 
-printRepeating2 = function (arr) {
+function printRepeating2(arr) {
     var i;
     var size = arr.length;
     arr.sort(function cmp(a, b) { return (a - b); });
-    console.info(" Repeating elements are ");
+    console.log(" Repeating elements are ");
     for (i = 1; i < size; i++) {
         if (arr[i] === arr[i - 1]) {
-            console.info(" " + arr[i]);
+            console.log(" " + arr[i]);
         }
     }
 };
 
 
-printRepeating3 = function (arr) {
-    var hs = new HashTable();
+function printRepeating3(arr) {
+    var hs = {};
     var i;
     var size = arr.length;
-    console.info(" Repeating elements are ");
+    console.log(" Repeating elements are ");
     for (i = 0; i < size; i++) {
-        if (hs.find(arr[i])) {
-            console.info(" " + arr[i]);
+        if (arr[i] in hs) {
+            console.log(" " + arr[i]);
         }
         else {
-            hs.insert(arr[i]);
+            hs[arr[i]] = 1;
         }
     }
 };
 
 
-printRepeating4 = function (arr) {
+function printRepeating4(arr) {
     var count = new Array(size);
     var i;
     var size = arr.length;
     for (i = 0; i < size; i++) {
         count[i] = 0;
     }
-    console.info(" Repeating elements are ");
+    console.log(" Repeating elements are ");
     for (i = 0; i < size; i++) {
         if (count[arr[i]] === 1) {
-            console.info(" " + arr[i]);
+            console.log(" " + arr[i]);
         }
         else {
             count[arr[i]]++;
@@ -172,7 +137,7 @@ printRepeating4 = function (arr) {
     }
 };
 
-main5 = function (args) {
+function main2(args) {
     var first = [1, 3, 5, 3, 1, 4, 2, 2];
     (printRepeating(first));
     (printRepeating2(first));
@@ -180,7 +145,7 @@ main5 = function (args) {
     (printRepeating4(first));
 };
 
-getMax = function (arr) {
+function getMax(arr) {
     var i;
     var j;
     var max = arr[0];
@@ -202,7 +167,7 @@ getMax = function (arr) {
     return max;
 };
 
-getMax2 = function (arr) {
+function getMax2(arr) {
     var max = arr[0];
     var size = arr.length;
     var maxCount = 1;
@@ -226,7 +191,7 @@ getMax2 = function (arr) {
     return max;
 };
 
-getMax3 = function (arr, range) {
+function getMax3(arr, range) {
     var max = arr[0];
     var size = arr.length;
     var maxCount = 1;
@@ -245,14 +210,14 @@ getMax3 = function (arr, range) {
     return max;
 };
 
-main6 = function (args) {
+function main3(args) {
     var first = [1, 3, 5, 3, 1, 2, 4, 2, 2];
-    console.info(getMax(first));
-    console.info(getMax2(first));
-    console.info(getMax3(first, 10));
+    console.log(getMax(first));
+    console.log(getMax2(first));
+    console.log(getMax3(first, 10));
 };
 
-getMajority = function (arr) {
+function getMajority(arr) {
     var i;
     var j;
     var size = arr.length;
@@ -279,7 +244,7 @@ getMajority = function (arr) {
     }
 };
 
-getMajority2 = function (arr) {
+function getMajority2(arr) {
     var size = arr.length;
     var majIndex = Math.floor(size / 2);
     var count = 1;
@@ -301,7 +266,7 @@ getMajority2 = function (arr) {
     }
 };
 
-getMajority3 = function (arr) {
+function getMajority3(arr) {
     var size = arr.length;
     var majIndex = 0;
     var count = 1;
@@ -334,14 +299,14 @@ getMajority3 = function (arr) {
     }
 };
 
-main6 = function (args) {
+function main4(args) {
     var first = [1, 3, 5, 3, 1, 2, 4, 2, 2, 2, 2, 2, 2];
-    console.info(getMajority(first));
-    console.info(getMajority2(first));
-    console.info(getMajority3(first, 10));
+    console.log(getMajority(first));
+    console.log(getMajority2(first));
+    console.log(getMajority3(first, 10));
 }
 
-findMissingNumber = function (arr) {
+function findMissingNumber(arr) {
     var i;
     var j;
     var size = arr.length;
@@ -361,7 +326,7 @@ findMissingNumber = function (arr) {
     return MAX_VALUE;
 };
 
-findMissingNumber2 = function (arr, range) {
+function findMissingNumber2(arr, range) {
     if ((arr != null && arr instanceof Array) && (typeof range === 'number')) {
         var i;
         var size = arr.length;
@@ -378,21 +343,21 @@ findMissingNumber2 = function (arr, range) {
         throw new Error('invalid overload');
 };
 
-main7 = function (args) {
+function main5(args) {
     var first = [1, 3, 5, 7, 2, 4, 8, 9, 10];
-    console.info(findMissingNumber(first));
-    console.info(findMissingNumber2(first, 10));
+    console.log(findMissingNumber(first));
+    console.log(findMissingNumber2(first, 10));
 }
 
 
-FindPair = function (arr, value) {
+function FindPair(arr, value) {
     var i;
     var j;
     var size = arr.length;
     for (i = 0; i < size; i++) {
         for (j = i + 1; j < size; j++) {
             if ((arr[i] + arr[j]) === value) {
-                console.info("The pair is : " + arr[i] + "," + arr[j]);
+                console.log("The pair is : " + arr[i] + "," + arr[j]);
                 return 1;
             }
         }
@@ -400,7 +365,7 @@ FindPair = function (arr, value) {
     return 0;
 };
 
-FindPair2 = function (arr, value) {
+function FindPair2(arr, value) {
     var first = 0;
     var size = arr.length;
     var second = size - 1;
@@ -409,7 +374,7 @@ FindPair2 = function (arr, value) {
     while ((first < second)) {
         curr = arr[first] + arr[second];
         if (curr === value) {
-            console.info("The pair is " + arr[first] + "," + arr[second]);
+            console.log("The pair is " + arr[first] + "," + arr[second]);
             return 1;
         }
         else if (curr < value) {
@@ -423,29 +388,29 @@ FindPair2 = function (arr, value) {
 };
 
 
-FindPair3 = function (arr, value) {
-    var hs = new HashTable();
+function FindPair3(arr, value) {
+    var hs = {};
     var size = arr.length;
     var i;
     for (i = 0; i < size; i++) {
-        if (hs.find(value - arr[i])) {
-            console.info("The pair is : " + arr[i] + " , " + (value - arr[i]));
+        if ((value - arr[i]) in hs) {
+            console.log("The pair is : " + arr[i] + " , " + (value - arr[i]));
             return 1;
         }
-        hs.insert(arr[i]);
+        hs[arr[i]] = 1;
     }
     return 0;
 };
 
 
-main9 = function (args) {
+function main6(args) {
     var first = [1, 3, 5, 7, 2, 4, 8, 9, 10];
-    console.info(FindPair(first, 9));
-    console.info(FindPair2(first, 9));
-    console.info(FindPair3(first, 9));
+    console.log(FindPair(first, 9));
+    console.log(FindPair2(first, 9));
+    console.log(FindPair3(first, 9));
 }
 
-minabsSumPair = function (arr) {
+function minabsSumPair(arr) {
     var l;
     var r;
     var size = arr.length;
@@ -454,7 +419,7 @@ minabsSumPair = function (arr) {
     var minFirst;
     var minSecond;
     if (size < 2) {
-        console.info("Invalid Input");
+        console.log("Invalid Input");
         return;
     }
     minFirst = 0;
@@ -470,10 +435,10 @@ minabsSumPair = function (arr) {
             }
         }
     }
-    console.info(" The two elements with minimum sum are : " + arr[minFirst] + " , " + arr[minSecond]);
+    console.log(" The two elements with minimum sum are : " + arr[minFirst] + " , " + arr[minSecond]);
 };
 
-minabsSumPair2 = function (arr) {
+function minabsSumPair2(arr) {
     var l;
     var r;
     var size = arr.length;
@@ -482,7 +447,7 @@ minabsSumPair2 = function (arr) {
     var minFirst;
     var minSecond;
     if (size < 2) {
-        console.info("Invalid Input");
+        console.log("Invalid Input");
         return;
     }
     arr.sort(function cmp(a, b) { return (a - b); });
@@ -506,23 +471,23 @@ minabsSumPair2 = function (arr) {
             break;
         }
     }
-    console.info(" The two elements with minimum sum are : " + arr[minFirst] + " , " + arr[minSecond]);
+    console.log(" The two elements with minimum sum are : " + arr[minFirst] + " , " + arr[minSecond]);
 };
 
-main10 = function (args) {
+function main7(args) {
     var first = [1, 3, 5, 7, 2, 4, -12, 8, -9, 9, 10];
     minabsSumPair(first);
     minabsSumPair2(first);
 }
 
-SearchBotinicArrayMax = function (arr) {
+function SearchBotinicArrayMax(arr) {
     var size = arr.length;
     var start = 0;
     var end = size - 1;
     var mid = Math.floor((start + end) / 2);
     var maximaFound = 0;
     if (size < 3) {
-        console.info("error");
+        console.log("error");
         return 0;
     }
     while ((start <= end)) {
@@ -542,18 +507,18 @@ SearchBotinicArrayMax = function (arr) {
         }
     };
     if (maximaFound === 0) {
-        console.info("error");
+        console.log("error");
         return 0;
     }
     return arr[mid];
 };
 
-main12 = function (args) {
+function main8(args) {
     var first = [1, 3, 5, 7, 9, 11, 12, 8, 5, 3, 1];
-    console.info(SearchBotinicArrayMax(first));
+    console.log(SearchBotinicArrayMax(first));
 }
 
-SearchBitonicArray = function (arr, key) {
+function SearchBitonicArray(arr, key) {
     var size = arr.length;
     var max = FindMaxBitonicArray(arr);
     var k = BinarySearch(arr, 0, max, key, true);
@@ -568,13 +533,13 @@ SearchBitonicArray = function (arr, key) {
 };
 
 
-FindMaxBitonicArray = function (arr) {
+function FindMaxBitonicArray(arr) {
     var size = arr.length;
     var start = 0;
     var end = size - 1;
     var mid;
     if (size < 3) {
-        console.info("error");
+        console.log("error");
         return -1;
     }
     while ((start <= end)) {
@@ -592,11 +557,11 @@ FindMaxBitonicArray = function (arr) {
             break;
         }
     };
-    console.info("error");
+    console.log("error");
     return -1;
 };
 
-BinarySearch = function (arr, start, end, key, isInc) {
+function BinarySearch(arr, start, end, key, isInc) {
     var mid;
     if (end < start) {
         return -1;
@@ -613,14 +578,14 @@ BinarySearch = function (arr, start, end, key, isInc) {
     }
 };
 
-main12 = function (args) {
+function main9(args) {
     var first = [1, 3, 5, 7, 9, 11, 12, 8, 5, 3, 1];
-    console.info(SearchBitonicArray(first, 8));
-    console.info(SearchBitonicArray(first, 7));
-    console.info(SearchBitonicArray(first, 12));
+    console.log(SearchBitonicArray(first, 8));
+    console.log(SearchBitonicArray(first, 7));
+    console.log(SearchBitonicArray(first, 12));
 }
 
-findKeyCount = function (arr, key) {
+function findKeyCount(arr, key) {
     var size = arr.length;
     var i;
     var count = 0;
@@ -632,7 +597,7 @@ findKeyCount = function (arr, key) {
     return count;
 };
 
-findKeyCount2 = function (arr, key) {
+function findKeyCount2(arr, key) {
     var size = arr.length;
     var firstIndex;
     var lastIndex;
@@ -641,7 +606,7 @@ findKeyCount2 = function (arr, key) {
     return (lastIndex - firstIndex + 1);
 };
 
-findFirstIndex = function (arr, start, end, key) {
+function findFirstIndex(arr, start, end, key) {
     var mid;
     if (end < start) {
         return -1;
@@ -658,7 +623,7 @@ findFirstIndex = function (arr, start, end, key) {
     }
 };
 
-findLastIndex = function (arr, start, end, key) {
+function findLastIndex(arr, start, end, key) {
     var mid;
     if (end < start) {
         return -1;
@@ -675,13 +640,13 @@ findLastIndex = function (arr, start, end, key) {
     }
 };
 
-swap = function (arr, first, second) {
+function swap(arr, first, second) {
     var temp = arr[first];
     arr[first] = arr[second];
     arr[second] = temp;
 };
 
-seperateEvenAndOdd = function (arr) {
+function seperateEvenAndOdd(arr) {
     var size = arr.length;
     var left = 0;
     var right = size - 1;
@@ -700,13 +665,13 @@ seperateEvenAndOdd = function (arr) {
     };
 };
 
-main14 = function (args) {
+function main10(args) {
     var first = [1, 0, 5, 7, 9, 11, 12, 8, 5, 3, 1];
     seperateEvenAndOdd(first);
-    console.info(first.toString());
+    console.log(first.toString());
 }
 
-maxProfit = function (stocks) {
+function maxProfit(stocks) {
     var size = stocks.length;
     var buy = 0;
     var sell = 0;
@@ -725,27 +690,27 @@ maxProfit = function (stocks) {
             maxProfit = currProfit;
         }
     }
-    console.info("Purchase day is- " + buy + " at price " + stocks[buy]);
-    console.info("Sell day is- " + sell + " at price " + stocks[sell]);
+    console.log("Purchase day is- " + buy + " at price " + stocks[buy]);
+    console.log("Sell day is- " + sell + " at price " + stocks[sell]);
 };
 
-main15 = function (args) {
+function main11(args) {
     var first = [10, 10, 5, 7, 9, 11, 12, 8, 5, 3, 10];
     maxProfit(first);
 }
 
-getMedian = function (arr) {
+function getMedian(arr) {
     var size = arr.length;
     arr.sort(function cmp(a, b) { return (a - b); });
     return arr[Math.floor(size / 2)];
 };
 
-main16 = function (args) {
+function main12(args) {
     var first = [10, 10, 5, 7, 9, 11, 12, 8, 5, 3, 10];
-    console.info("median value is :: " + getMedian(first));
+    console.log("median value is :: " + getMedian(first));
 }
 
-findMedian = function (arrFirst, arrSecond) {
+function findMedian(arrFirst, arrSecond) {
     var sizeFirst = arrFirst.length;
     var sizeSecond = arrSecond.length;
     var medianIndex = Math.floor(((sizeFirst + sizeSecond) + (sizeFirst + sizeSecond) % 2) / 2);
@@ -769,23 +734,23 @@ findMedian = function (arrFirst, arrSecond) {
     }
 };
 
-main17 = function (args) {
+function main13(args) {
     var first = [10, 10, 5, 7, 9, 11];
     var second = [12, 8, 5, 3, 10];
     first.sort(function cmp(a, b) { return (a - b); });
     second.sort(function cmp(a, b) { return (a - b); });
-    console.info("median value is :: " + findMedian(first, second));
+    console.log("median value is :: " + findMedian(first, second));
 }
 
-min = function (a, b) {
+function min(a, b) {
     return a > b ? b : a;
 };
 
-max = function (a, b) {
+function max(a, b) {
     return a < b ? b : a;
 };
 
-BinarySearch01 = function (arr) {
+function BinarySearch01(arr) {
     var size = arr.length;
     if (size === 0) {
         return 0;
@@ -793,7 +758,7 @@ BinarySearch01 = function (arr) {
     return BinarySearch01Util(arr, 0, size - 1);
 };
 
-BinarySearch01Util = function (arr, start, end) {
+function BinarySearch01Util(arr, start, end) {
     var mid;
     if (end < start) {
         return -1;
@@ -810,18 +775,18 @@ BinarySearch01Util = function (arr, start, end) {
     }
 };
 
-main18 = function (args) {
+function main14(args) {
     var first = "00000000111"
-    console.info("BinarySearch01 index is :: " + BinarySearch01(first));
+    console.log("BinarySearch01 index is :: " + BinarySearch01(first));
 }
 
 
-BinarySearchRotateArray = function (arr, key) {
+function BinarySearchRotateArray(arr, key) {
     var size = arr.length;
     return BinarySearchRotateArrayUtil(arr, 0, size - 1, key);
 };
 
-BinarySearchRotateArrayUtil = function (arr, start, end, key) {
+function BinarySearchRotateArrayUtil(arr, start, end, key) {
     var mid;
     if (end < start) {
         return -1;
@@ -848,14 +813,14 @@ BinarySearchRotateArrayUtil = function (arr, start, end, key) {
     }
 };
 
-main19 = function (args) {
+function main15(args) {
     first = [7, 9, 10, 11, 3, 5, 7]
-    console.info("BinarySearchRotateArray index is :: " + BinarySearchRotateArray(first, 8));
-    console.info("BinarySearchRotateArray index is :: " + BinarySearchRotateArray(first, 7));
-    console.info("BinarySearchRotateArray index is :: " + BinarySearchRotateArray(first, 6));
+    console.log("BinarySearchRotateArray index is :: " + BinarySearchRotateArray(first, 8));
+    console.log("BinarySearchRotateArray index is :: " + BinarySearchRotateArray(first, 7));
+    console.log("BinarySearchRotateArray index is :: " + BinarySearchRotateArray(first, 6));
 }
 
-FirstRepeated = function (arr) {
+function FirstRepeated(arr) {
     var i;
     var j;
     var size = arr.length;
@@ -869,12 +834,12 @@ FirstRepeated = function (arr) {
     return 0;
 };
 
-main20 = function (args) {
+function main16(args) {
     first = [7, 9, 3, 11, 3, 5, 7]
-    console.info("FirstRepeated :: " + FirstRepeated(first));
+    console.log("FirstRepeated :: " + FirstRepeated(first));
 }
 
-transformArrayAB = function (str) {
+function transformArrayAB(str) {
     var size = str.length;
     arr = str.split("");
     var N = Math.floor(size / 2);
@@ -888,20 +853,20 @@ transformArrayAB = function (str) {
     return arr.join("");
 };
 
-main23 = function (args) {
+function main17(args) {
     first = "aaaabbbb"
-    console.info(transformArrayAB(first));
+    console.log(transformArrayAB(first));
 }
 
 
-checkPermutation = function (array1, array2) {
+function checkPermutation(array1, array2) {
     var size1 = array1.length;
     var size2 = array2.length;
     if (size1 !== size2) {
         return false;
     }
-    Arrays.sort(array1);
-    Arrays.sort(array2);
+    array1.sort();
+    array2.sort();
     for (var i = 0; i < size1; i++) {
         if (array1[i] !== array2[i]) {
             return false;
@@ -910,27 +875,41 @@ checkPermutation = function (array1, array2) {
     return true;
 };
 
-checkPermutation2 = function (array1, array2) {
+function checkPermutation2(array1, array2) {
     var i;
     var size1 = array1.length;
     var size2 = array2.length;
     if (size1 !== size2) {
         return false;
     }
-    var hs = new HashTable();
+    var ht = {};
     for (i = 0; i < size1; i++) {
-        hs.insert(array1[i]);
+        if (array1[i] in ht) {
+            ht[array1[i]] += 1
+        } else {
+            ht[array1[i]] = 1
+        }
     }
     for (i = 0; i < size2; i++) {
-        if (al.find(array2[i]) === false) {
+        if (array2[i] in ht === false) {
             return false;
+        } else {
+            ht[array1[i]] -= 1
+            if (ht[array1[i]] == 0) {
+                delete  ht[array2[i]]
+            }
         }
-        al.remove(array2[i]);
     }
     return true;
 };
 
-removeDuplicates = function (array) {
+var first = [1, 2, 3, 1, 2, 3, 5, 6, 7, 7, 8, 9, 3, 4, 5]
+var second = [1, 2, 4, 5, 3, 1, 2, 3, 5, 6, 7, 7, 8, 9, 3]
+
+console.log( "checkPermutation " + checkPermutation(first, second))
+console.log( "checkPermutation2 " + checkPermutation2(first, second))
+
+function removeDuplicates(array) {
     var j = 0;
     var i;
     var size = array.length;
@@ -947,12 +926,12 @@ removeDuplicates = function (array) {
     return array.slice(0, j + 1);
 };
 
-main25 = function (args) {
+function main18(args) {
     first = [1, 2, 3, 1, 2, 3, 5, 6, 7, 7, 8, 9, 3, 4, 5]
-    console.info(removeDuplicates(first));
+    console.log(removeDuplicates(first));
 }
 
-FindElementIn2DArray = function (arr, r, c, value) {
+function FindElementIn2DArray(arr, r, c, value) {
     var row = 0;
     var column = c - 1;
     while ((row < r && column >= 0)) {
@@ -969,7 +948,7 @@ FindElementIn2DArray = function (arr, r, c, value) {
     return false;
 };
 
-main = function (args) {
+function main19(args) {
     var f = new Array(10);
     var count = 0;
     for (i = 0; i < 10; i++) {
@@ -979,9 +958,27 @@ main = function (args) {
         }
     }
 
-    console.info(FindElementIn2DArray(f, 10, 10, 21));
-    console.info(FindElementIn2DArray(f, 10, 10, 121));
+    console.log(FindElementIn2DArray(f, 10, 10, 21));
+    console.log(FindElementIn2DArray(f, 10, 10, 121));
 }
 
 
-main(null);
+main1(null);
+main2(null);
+main3(null);
+main4(null);
+main5(null);
+main6(null);
+main7(null);
+main8(null);
+main9(null);
+main10(null);
+main11(null);
+main12(null);
+main13(null);
+main14(null);
+main15(null);
+main16(null);
+main17(null);
+main18(null);
+main19(null);

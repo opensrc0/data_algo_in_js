@@ -1,85 +1,88 @@
-isBalancedParenthesis = function(expn) {
+function isBalancedParenthesis(expn) {
 	{
 		var stk = [];
 		for (var index = 0; index < expn.length; index++) {
 			var ch = expn[index];
 			{
 				switch (ch) {
-				case '{':
-				case '[':
-				case '(':
-					stk.push(ch);
-					break;
-				case '}':
-					if (stk.pop() !== '{') {
-						return false;
-					}
-					break;
-				case ']':
-					if (stk.pop() !== '[') {
-						return false;
-					}
-					break;
-				case ')':
-					if (stk.pop() !== '(') {
-						return false;
-					}
-					break;
+					case '{':
+					case '[':
+					case '(':
+						stk.push(ch);
+						break;
+					case '}':
+						if (stk.pop() !== '{') {
+							return false;
+						}
+						break;
+					case ']':
+						if (stk.pop() !== '[') {
+							return false;
+						}
+						break;
+					case ')':
+						if (stk.pop() !== '(') {
+							return false;
+						}
+						break;
 				}
 			}
 		}
 	}
 	return stk.length;
 };
-main2 = function(args) {
+
+function main1() {
 	var expn = "{()}[";
 	var value = isBalancedParenthesis(expn);
-	console.info("Given Expn:" + expn);
-	console.info("Result after isParenthesisMatched:" + value);
+	console.log("Given Expn:" + expn);
+	console.log("Result after isParenthesisMatched:" + value);
 };
+
+main1()
 
 function postfixEvaluate(expn) {
 	var stk = [];
 	var temp;
 	var tokens = expn.split(" ");
-	for ( var tok in tokens) {
+	for (var tok in tokens) {
 		temp = parseInt(tokens[tok]);
-		if(isNaN(temp) === false) {
+		if (isNaN(temp) === false) {
 			stk.push(temp);
-		} 
+		}
 		else {
 			num1 = stk.pop();
 			num2 = stk.pop();
 			op = tokens[tok];
 			switch (op) {
-			case '+':
-				stk.push(num1 + num2);
-				break;
-			case '-':
-				stk.push(num1 - num2);
-				break;
-			case '*':
-				stk.push(num1 * num2);
-				break;
-			case '/':
-				stk.push(num1 / num2);
-				break;
+				case '+':
+					stk.push(num1 + num2);
+					break;
+				case '-':
+					stk.push(num1 - num2);
+					break;
+				case '*':
+					stk.push(num1 * num2);
+					break;
+				case '/':
+					stk.push(num1 / num2);
+					break;
 			}
 		}
 	}
 	return stk.pop();
 }
 
-function main33() {
+function main2() {
 	expn = "6 5 2 3 + 8 * + 3 + *";
 	value = postfixEvaluate(expn);
-	console.info("Given Postfix Expn: " + expn);
-	console.info("Result after Evaluation: " + value);
+	console.log("Given Postfix Expn: " + expn);
+	console.log("Result after Evaluation: " + value);
 }
 
-main33();
+main2();
 
-insertAtBottom = function(stk, value) {
+function insertAtBottom(stk, value) {
 	if (stk.length) {
 		stk.push(value);
 	} else {
@@ -89,7 +92,7 @@ insertAtBottom = function(stk, value) {
 	}
 };
 
-reverseStack = function(stk) {
+function reverseStack(stk) {
 	if (stk.length) {
 		return;
 	} else {
@@ -99,7 +102,7 @@ reverseStack = function(stk) {
 	}
 };
 
-reverseStack22 = function(stk) {
+function reverseStack22(stk) {
 	if (stk.length) {
 		return;
 	} else {
@@ -114,7 +117,7 @@ reverseStack22 = function(stk) {
 	}
 };
 
-precedence = function(x) {
+function precedence(x) {
 	if (x === '(') {
 		return (0);
 	}
@@ -129,7 +132,7 @@ precedence = function(x) {
 	return (4);
 };
 
-infixToPostfix = function(expn) {
+function infixToPostfix(expn) {
 	var stk = [];
 	var output = "";
 	var out;
@@ -140,30 +143,30 @@ infixToPostfix = function(expn) {
 				output = output + ch;
 			} else {
 				switch ((ch)) {
-				case '+':
-				case '-':
-				case '*':
-				case '/':
-				case '%':
-				case '^':
-					while (stk.length != 0
+					case '+':
+					case '-':
+					case '*':
+					case '/':
+					case '%':
+					case '^':
+						while (stk.length != 0
 							&& precedence(ch) <= precedence(stk[stk.length - 1])) {
-						out = stk.pop();
-						output = output + " " + out;
-					}
-					;
-					stk.push(ch);
-					output = output + " ";
-					break;
-				case '(':
-					stk.push(ch);
-					break;
-				case ')':
-					while ((stk.length != 0 && (out = stk.pop()) !== '(')) {
-						output = output + " " + out + " ";
-					}
-					;
-					break;
+							out = stk.pop();
+							output = output + " " + out;
+						}
+						;
+						stk.push(ch);
+						output = output + " ";
+						break;
+					case '(':
+						stk.push(ch);
+						break;
+					case ')':
+						while ((stk.length != 0 && (out = stk.pop()) !== '(')) {
+							output = output + " " + out + " ";
+						}
+						;
+						break;
 				}
 			}
 		}
@@ -176,14 +179,15 @@ infixToPostfix = function(expn) {
 	return output;
 };
 
-main = function(args) {
+function main4(args) {
 	var expn = "10+((3))*5/(16-4)";
 	var value = infixToPostfix(expn);
-	console.info("Infix Expn: " + expn);
-	console.info("Postfix Expn: " + value);
+	console.log("Infix Expn: " + expn);
+	console.log("Postfix Expn: " + value);
 };
+main4()
 
-infixToPrefix = function(expn) {
+function infixToPrefix(expn) {
 	expn = reverseString(expn);
 	expn = replaceParanthesis(expn);
 	expn = infixToPostfix(expn);
@@ -191,7 +195,7 @@ infixToPrefix = function(expn) {
 	return expn;
 };
 
-replaceParanthesis = function(expn) {
+function replaceParanthesis(expn) {
 	var retval = "";
 	var size = expn.length;
 	var tempChar;
@@ -210,7 +214,7 @@ replaceParanthesis = function(expn) {
 	return retval;
 };
 
-reverseString = function(expn) {
+function reverseString(expn) {
 	var reverse = "";
 	var upper = expn.length - 1;
 	var tempChar;
@@ -222,14 +226,15 @@ reverseString = function(expn) {
 	return reverse;
 };
 
-main5 = function(args) {
+function main5(args) {
 	var expn = "10+((3))*5/(16-4)";
 	var value = infixToPrefix(expn);
-	console.info("Infix Expn: " + expn);
-	console.info("Prefix Expn: " + value);
+	console.log("Infix Expn: " + expn);
+	console.log("Prefix Expn: " + value);
 };
+main5()
 
-StockSpanRange = function(arr) {
+function StockSpanRange(arr) {
 	var SR = new Array(arr.length);
 	SR[0] = 1;
 	for (var i = 1; i < arr.length; i++) {
@@ -241,7 +246,7 @@ StockSpanRange = function(arr) {
 	return SR;
 };
 
-prototype.StockSpanRange2 = function(arr) {
+function StockSpanRange2(arr) {
 	var stk = (new Stack());
 	var SR = new Array(arr.length);
 	stk.push(0);
@@ -256,7 +261,8 @@ prototype.StockSpanRange2 = function(arr) {
 	}
 	return SR;
 };
-GetMaxArea = function(arr) {
+
+function GetMaxArea(arr) {
 	var size = arr.length;
 	var maxArea = -1;
 	var currArea;
@@ -275,7 +281,8 @@ GetMaxArea = function(arr) {
 	}
 	return maxArea;
 };
-GetMaxArea2 = function(arr) {
+
+function GetMaxArea2(arr) {
 	var size = arr.length;
 	var stk = [];
 	var maxArea = 0;
@@ -286,8 +293,7 @@ GetMaxArea2 = function(arr) {
 		while (((i < size) && (stk.length == 0 || arr[stk.peek()] <= arr[i]))) {
 			stk.push(i);
 			i++;
-		}
-		;
+		};
 		while ((!stk.length && (i === size || arr[stk.peek()] > arr[i]))) {
 			top = stk.peek();
 			stk.pop();
@@ -295,10 +301,8 @@ GetMaxArea2 = function(arr) {
 			if (maxArea < topArea) {
 				maxArea = topArea;
 			}
-		}
-		;
-	}
-	;
+		};
+	};
 	return maxArea;
 };
 
