@@ -33,8 +33,6 @@ Bulb.prototype.isOnFun = function () {
     return this.isOn;
 };
 
-
-
 var AdvanceBulb = function() {
     Bulb.call(this);
     this.intensity = 0;
@@ -44,15 +42,11 @@ AdvanceBulb.prototype.setIntersity = function (i) {
     this.intensity = i;
 };
 
-function main(args) {
-    var b = new Bulb();
-    console.info("Bulb count :" + Bulb.getBulbCount());
-    console.info("Bulb Size :" + b.size);
-    b.size = BulbSize.SMALL;
-    console.info("Bulb Size :" + b.size);
-    console.info("bulb is on return : " + b.isOnFun());
-    b.turnOn();
-    console.info("bulb is on return : " + b.isOnFun());
-};
-
-main(null);
+var b = new Bulb();
+console.log("Bulb count :" + Bulb.getBulbCount());
+console.log("Bulb Size :" + b.size);
+b.size = BulbSize.SMALL;
+console.log("Bulb Size :" + b.size);
+console.log("bulb is on return : " + b.isOnFun());
+b.turnOn();
+console.log("bulb is on return : " + b.isOnFun());

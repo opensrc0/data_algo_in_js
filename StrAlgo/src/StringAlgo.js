@@ -22,11 +22,12 @@ function matchExpUtil(exp, str, i, j) {
 };
 
 function main() {
-	console.info(matchExp("hello*", "helloworld"));
-	console.info(matchExp("hello?d", "hellowd"));
-	console.info(matchExp("hello*hemant", "helloworldfsdfsdfdsfhemant"));
+	console.log(matchExp("hello*", "helloworld"));
+	console.log(matchExp("hello?d", "hellowd"));
+	console.log(matchExp("hello*hemant", "helloworldfsdfsdfdsfhemant"));
 }
-// main();
+main();
+
 
 function match(source, pattern) {
 	var iSource = 0;
@@ -45,15 +46,15 @@ function match(source, pattern) {
 };
 
 function main1() {
-	console.info(match("hellofskdlfjsdlfjsldjflksdworld", "helloworld"));
-	console.info(match("hellod", "hellowd"));
-	console.info(match("hello*xxxxxxxxxxhemantxxxxxxxxxxxx", "hellnt"));
+	console.log(match("hellofskdlfjsdlfjsldjflksdworld", "helloworld"));
+	console.log(match("hellod", "hellowd"));
+	console.log(match("hello*xxxxxxxxxxhemantxxxxxxxxxxxx", "hellnt"));
 }
-// main1();
+main1();
 
 function isPrime(n) {
 	var answer = (n > 1) ? true : false;
-	for (var i = 2; i * i < n; ++i) {
+	for (var i = 2; i * i <= n; ++i) {
 		if (n % i === 0) {
 			answer = false;
 			break;
@@ -62,90 +63,70 @@ function isPrime(n) {
 	return answer;
 };
 
-function myAtoi(str) {
-	var value = 0;
-	var size = str.length;
-	for (var i = 0; i < size; i++) {
-		var ch = str[i];
-		value = (value << 3) + (value << 1) + (ch - '0');
-	}
-	return value;
-};
-
-function ToUpper(s) {
-	if ((s >= 'a') && (s <= 'z')) {
-		s = ('A' + s - 'a');
-	}
-	return s;
-};
-
-function ToLower(s) {
-	if ((s >= 'A') && (s <= 'Z')) {
-		s = ('a' + s - 'A');
-	}
-	return s;
-};
+console.log(isPrime(7))
+console.log(isPrime(9))
 
 function isUniqueChar(str) {
 	var bitarr = new Array(26);
 	for (var i = 0; i < 26; i++) {
 		bitarr[i] = 0;
 	}
+	var small = "a".charCodeAt(0)
+	var big = "A".charCodeAt(0)
 	var size = str.length;
 	for (var i = 0; i < size; i++) {
-		var c = str[i];
-		if (('A' <= c) && ('Z' >= c)) {
-			c = (c - 'A');
-		} else if (('a' <= c) && ('z' >= c)) {
-			c = (c - 'a');
+		var c = str.charCodeAt(i);
+		if ((big <= c) && (big + 26 >= c)) {
+			c = (c - big);
+		} else if ((small <= c) && (small + 26 >= c)) {
+			c = (c - small);
 		} else {
-			console.info("Unknown Char!\n");
+			console.log("Unknown Char!\n");
 			return false;
 		}
 		if (bitarr[c] !== 0) {
-			console.info("Duplicate detected!\n");
+			console.log("Duplicate detected!\n");
 			return false;
 		}
 		bitarr[c] = 1;
 	}
-	console.info("No duplicate detected!\n");
+	console.log("No duplicate detected!\n");
 	return true;
 };
 
-function LowerUpper(s) {
-	if ((s >= 'A') && (s <= 'Z')) {
-		s = ('a' + s - 'A');
-	} else if ((s >= 'a') && (s <= 'z')) {
-		s = ('A' + s - 'a');
-	}
-	return s;
-};
+isUniqueChar("hello")
+isUniqueChar("helo")
+
 
 function isPermutation(s1, s2) {
 	var count = new Array(256);
 	var length = s1.length;
 	if (s2.length !== length) {
-		console.info("is permutation return false\n");
+		console.log("is permutation return false\n");
 		return false;
 	}
 	for (var i = 0; i < 256; i++) {
 		count[i] = 0;
 	}
 	for (var i = 0; i < length; i++) {
-		var ch = s1[i];
+		var ch = s1.charCodeAt(i);
+		console.log(ch)
 		count[ch]++;
-		ch = s2[i];
+		ch = s2.charCodeAt(i);
 		count[ch]--;
 	}
-	for (var i = 0; i < length; i++) {
+	for (var i = 0; i < 256; i++) {
 		if (count[i] !== 0) {
-			console.info("is permutation return false\n");
+			console.log("is permutation return false\n");
 			return false;
 		}
 	}
-	console.info("is permutation return true\n");
+	console.log("is permutation return true\n");
 	return true;
 };
+
+isPermutation("apple","plepa");
+isPermutation("apple","plepb");
 
 function isPalindrome(str) {
 	var i = 0;
@@ -153,17 +134,20 @@ function isPalindrome(str) {
 	while ((i < j) && (str[i] === str[j])) {
 		i++;
 		j--;
-	}
-	;
+	};
 
 	if (i < j) {
-		console.info("String is not a Palindrome");
+		console.log("String is not a Palindrome");
 		return false;
 	} else {
-		console.info("String is a Palindrome");
+		console.log("String is a Palindrome");
 		return true;
 	}
 };
+
+console.log(isPalindrome("helloolleh"))
+console.log(isPalindrome("abab"))
+
 
 function pow(x, n) {
 	var value;
@@ -177,6 +161,7 @@ function pow(x, n) {
 		return (x * value * value);
 	}
 };
+console.log(pow(2,10))
 
 function myStrcmp(a, b) {
 	var index = 0;
@@ -188,8 +173,7 @@ function myStrcmp(a, b) {
 	}
 	while ((index < minlen) && (a[index] === b[index])) {
 		index++;
-	}
-	;
+	};
 
 	if (index === len1 && index === len2) {
 		return 0;
@@ -198,9 +182,11 @@ function myStrcmp(a, b) {
 	} else if (len2 === index) {
 		return 1;
 	} else {
-		return (a[index] - b[index]);
+		return (a.charCodeAt(index) - b.charCodeAt(index));
 	}
 };
+
+console.log(myStrcmp("hello", "bello"))
 
 function reverseStr(str) {
 	var a = str.split("");
@@ -230,7 +216,8 @@ function reverseArray(a, lower, upper) {
 	;
 };
 
-function reverseWords(a) {
+function reverseWords(str) {
+	var a = str.split("");
 	var length = a.length;
 	var lower;
 	var upper = -1;
@@ -244,10 +231,12 @@ function reverseWords(a) {
 			upper++;
 		}
 	}
+	reverseArray(a, lower, upper-1);
 	reverseArray(a, 0, length - 1);
+	return a.join("");
 };
-
-reverseWords("one two three four five");
+var arr = "one two three four five";
+console.log(reverseWords(arr));
 
 function printAnagram(str) {
 	var a = str.split("");
@@ -257,7 +246,7 @@ function printAnagram(str) {
 
 function printAnagramUtil(a, max, n) {
 	if (max === 1) {
-		console.info(a.join(""));
+		console.log(a.join(""));
 	}
 	for (var i = -1; i < max - 1; i++) {
 		if (i !== -1) {
@@ -275,35 +264,8 @@ function printAnagramUtil(a, max, n) {
 
 };
 
-function main3() {
-	printAnagram("12345");
-}
-// main3();
 
-function shuffle(str) {
-	var ar = str.split("");
-	var n = Math.floor(ar.length / 2);
-	var count = 0;
-	var k = 1;
-	var temp;
-	for (var i = 1; i < n; i = i + 2) {
-		temp = ar[i];
-		k = i;
-		do {
-			k = (2 * k) % (2 * n - 1);
-			temp = ar[k];
-			ar[k] = ar[i];
-			ar[i] = temp;
-			count++;
-		} while ((i !== k));
-		if (count === (2 * n - 2)) {
-			break;
-		}
-	}
-	return ar.join("");
-};
-
-// console.info(shuffle("ABCDE12345"));
+printAnagram("12345");
 
 function addBinary(first, second) {
 	var size1 = first.length;
@@ -337,4 +299,4 @@ function addBinary(first, second) {
 	return total.join("");
 };
 
-// console.info(addBinary("1011", "111000111"));
+console.log(addBinary("1011", "111000111"));
