@@ -44,12 +44,12 @@ findMissing = function (arr, start, end) {
 
 printRepeating = function (arr) {
     var hs = new HashTable();
-    console.info("Repeating elements are:");
+    console.log("Repeating elements are:");
     for (var insert = 0; insert < arr.length; insert++) {
         var val = arr[insert];
         {
             if (hs.find(val))
-                console.info(val);
+                console.log(val);
             else
                 hs.insert(val);
         }
@@ -66,7 +66,7 @@ printFirstRepeating = function (arr) {
     for (i = 0; i < size; i++) {
         hs.remove(arr[i]);
         if (hs.find(arr[i])) {
-            console.info("First Repeating number is : " + arr[i]);
+            console.log("First Repeating number is : " + arr[i]);
             return;
         }
     }
@@ -78,12 +78,12 @@ main = function (args) {
     var first = "hello";
     var second = "elloh";
     var third = "world";
-    console.info("isAnagram : " + isAnagram(first, second));
-    console.info("isAnagram : " + isAnagram(first, third));
+    console.log("isAnagram : " + isAnagram(first, second));
+    console.log("isAnagram : " + isAnagram(first, third));
     removeDuplicate(first);
-    console.info(first);
+    console.log(first);
     var arr = [1, 2, 3, 5, 6, 7, 8, 9, 10];
-    console.info(findMissing(arr, 1, 10));
+    console.log(findMissing(arr, 1, 10));
     var arr1 = [1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 1];
     printRepeating(arr1);
     printFirstRepeating(arr1);

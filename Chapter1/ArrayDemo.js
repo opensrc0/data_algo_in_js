@@ -10,13 +10,8 @@ ArrayDemo.prototype.getValue = function (index) {
     return this.numbers[index];
 };
 
-
-function main(args) {
-    var d = new ArrayDemo();
-    d.addValue(0, 1);
-    d.addValue(1, 2);
-    console.info(d.getValue(0));
-    console.info(d.getValue(1));
-};
-
-main(null);
+var d = new ArrayDemo();
+d.addValue(0, 1);
+d.addValue(1, 2);
+console.log(d.getValue(0));
+console.log(d.getValue(1));

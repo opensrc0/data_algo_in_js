@@ -6,9 +6,9 @@ function Queue() {
     this.data = new Array(this.Capacity);
 }
 
-Queue.add = function (value) {
+Queue.prototype.add = function (value) {
     if (this.size >= this.Capacity) {
-        console.info("Queue is full.");
+        console.log("Queue is full.");
         return false;
     }
     else {
@@ -19,10 +19,10 @@ Queue.add = function (value) {
     return true;
 };
 
-Queue.remove = function () {
+Queue.prototype.remove = function () {
     var value;
     if (this.size <= 0) {
-        console.info("Queue is empty.");
+        console.log("Queue is empty.");
         return -999;
     }
     else {
@@ -33,22 +33,22 @@ Queue.remove = function () {
     return value;
 };
 
-Queue.isEmpty = function () {
+Queue.prototype.isEmpty = function () {
     return this.size === 0;
 };
 
-Queue.length = function () {
+Queue.prototype.length = function () {
     return this.size;
 };
 
-function main(args) {
+function main() {
     var que = new Queue();
     for (var i = 0; i < 20; i++) {
         que.add(i);
     }
     for (var i = 0; i < 22; i++) {
-        console.info(que.remove());
+        console.log(que.remove());
     }
 };
 
-Queue.main(null);
+//Queue.main();

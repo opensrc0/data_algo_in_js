@@ -39,7 +39,7 @@ quickSelectWrapper = function (arr, k) {
 function main(args) {
     var array = [3, 4, 2, 1, 6, 5, 7, 8, 10, 9];
     quickSelectWrapper(array, 5);
-    console.info("value at index 5 is : " + array[4]);
+    console.log("value at index 5 is : " + array[4]);
 };
 
 main(null);

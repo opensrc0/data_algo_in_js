@@ -91,7 +91,7 @@ function fun8(n) {
     var j;
     var m = 0;
     for (i = 0; i < n; i++) {
-        for (j = 0; j < Math.sqrt(n) ; j++) {
+        for (j = 0; j < Math.sqrt(n); j++) {
             m += 1;
         }
     }
@@ -161,21 +161,16 @@ function fun13(n) {
     return m;
 };
 
-main = function (args) {
-    console.info("Number of instructions O(n):: " + fun1(100));
-    console.info("Number of instructions O(n^2):: " + fun2(100));
-    console.info("Number of instructions O(n^2):: " + fun3(100));
-    console.info("Number of instructions O(log(n)):: " + fun4(100));
-    console.info("Number of instructions O(log(n)):: " + fun5(100));
-    console.info("Number of instructions O(n^3):: " + fun6(100));
-    console.info("Number of instructions O(n^2):: " + fun7(100));
-    console.info("Number of instructions O(n^(3/2)):: " + fun8(100));
-    console.info("Number of instructions O(n):: " + fun9(100));
-    console.info("Number of instructions O(n^2):: " + fun10(100));
-    console.info("Number of instructions O(n^3):: " + fun11(100));
-    console.info("Number of instructions O(n):: " + fun12(100));
-    console.info("Number of instructions O(n):: " + fun13(100));
-};
-
-
-main(null);
+console.log("Number of instructions O(n):: " + fun1(100));
+console.log("Number of instructions O(n^2):: " + fun2(100));
+console.log("Number of instructions O(n^2):: " + fun3(100));
+console.log("Number of instructions O(log(n)):: " + fun4(100));
+console.log("Number of instructions O(log(n)):: " + fun5(100));
+console.log("Number of instructions O(n^3):: " + fun6(100));
+console.log("Number of instructions O(n^2):: " + fun7(100));
+console.log("Number of instructions O(n^(3/2)):: " + fun8(100));
+console.log("Number of instructions O(n):: " + fun9(100));
+console.log("Number of instructions O(n^2):: " + fun10(100));
+console.log("Number of instructions O(n^3):: " + fun11(100));
+console.log("Number of instructions O(n):: " + fun12(100));
+console.log("Number of instructions O(n):: " + fun13(100));

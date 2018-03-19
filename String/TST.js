@@ -53,9 +53,9 @@ TST.prototype.findUtil = function (curr, word, wordIndex) {
 TST.prototype.find = function (word) {
     var ret = this.findUtil(this.root, word, 0);
     if (ret)
-        console.info(word + " :: " + " Found ");
+        console.log(word + " :: " + " Found ");
     else
-        console.info(word + " :: " + "Not Found ");
+        console.log(word + " :: " + "Not Found ");
     return ret;
 };
 
@@ -64,7 +64,7 @@ TST.main = function (args) {
     tt.insert("banana");
     tt.insert("apple");
     tt.insert("mango");
-    console.info("\nSearch results for apple, banana, grapes and mango :");
+    console.log("\nSearch results for apple, banana, grapes and mango :");
     tt.find("apple");
     tt.find("banana");
     tt.find("mango");

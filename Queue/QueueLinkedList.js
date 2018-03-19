@@ -48,7 +48,7 @@ Queue.remove = function () {
 Queue.print = function () {
     var temp = this.head;
     while ((temp != null)) {
-        console.info(temp.value + " ");
+        console.log(temp.value + " ");
         temp = temp.next;
     };
 };

@@ -31,7 +31,7 @@ main = function(args) {
 		que.add(i);
 	}
 	for (var i = 0; i < 22; i++) {
-		console.info(que.remove());
+		console.log(que.remove());
 	}
 };
 

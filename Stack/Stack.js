@@ -37,7 +37,7 @@ Stack.prototype.pop = function () {
 
 Stack.prototype.print = function () {
     for (var i = this.__top; i >= 0; i--) {
-        console.info(this.data[i]);
+        console.log(this.data[i]);
     }
 };
 

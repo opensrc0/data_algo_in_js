@@ -278,7 +278,7 @@ LinkedList.prototype.freeList = function () {
 LinkedList.prototype.print = function () {
     var temp = this.head;
     while ((temp != null)) {
-        console.info(temp.value + " ");
+        console.log(temp.value + " ");
         temp = temp.next;
     };
 };
@@ -330,11 +330,11 @@ LinkedList.prototype.loopDetect = function () {
         slowPtr = slowPtr.next;
         fastPtr = fastPtr.next.next;
         if (slowPtr === fastPtr) {
-            console.info("loop found");
+            console.log("loop found");
             return true;
         }
     };
-    console.info("loop not found");
+    console.log("loop not found");
     return false;
 };
 
@@ -343,12 +343,12 @@ LinkedList.prototype.reverseListLoopDetect = function () {
     this.reverse();
     if (tempHead === this.head) {
         this.reverse();
-        console.info("loop found");
+        console.log("loop found");
         return true;
     }
     else {
         this.reverse();
-        console.info("loop not found");
+        console.log("loop not found");
         return false;
     }
 };
@@ -359,17 +359,17 @@ LinkedList.prototype.loopTypeDetect = function () {
     slowPtr = fastPtr = this.head;
     while ((fastPtr.next != null && fastPtr.next.next != null)) {
         if (this.head === fastPtr.next || this.head === fastPtr.next.next) {
-            console.info("circular list loop found");
+            console.log("circular list loop found");
             return 2;
         }
         slowPtr = slowPtr.next;
         fastPtr = fastPtr.next.next;
         if (slowPtr === fastPtr) {
-            console.info("loop found");
+            console.log("loop found");
             return 1;
         }
     };
-    console.info("loop not found");
+    console.log("loop not found");
     return 0;
 };
 
@@ -421,9 +421,9 @@ main = function (args) {
     ll.print();
     ll.reverseRecurse();
     ll.print();
-    console.info(ll.nthNodeFromBegining(2));
-    console.info(ll.nthNodeFromEnd(2));
-    console.info(ll.nthNodeFromEnd2(2));
+    console.log(ll.nthNodeFromBegining(2));
+    console.log(ll.nthNodeFromEnd(2));
+    console.log(ll.nthNodeFromEnd2(2));
 };
 
 main(null);

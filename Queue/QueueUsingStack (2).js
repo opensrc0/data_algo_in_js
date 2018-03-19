@@ -24,17 +24,17 @@ QueueUsingStack.main = function (args) {
     que.add(1);
     que.add(11);
     que.add(111);
-    console.info(que.remove());
+    console.log(que.remove());
     que.add(2);
     que.add(21);
     que.add(211);
-    console.info(que.remove());
-    console.info(que.remove());
-    console.info(que.remove());
-    console.info(que.remove());
-    console.info(que.remove());
-    console.info(que.remove());
-    console.info(que.remove());
+    console.log(que.remove());
+    console.log(que.remove());
+    console.log(que.remove());
+    console.log(que.remove());
+    console.log(que.remove());
+    console.log(que.remove());
+    console.log(que.remove());
 };
 
 QueueUsingStack.main(null);

@@ -1,9 +1,9 @@
 main = function(args) {
 	var st1 = "hello, world!";
 	var st2 = "world";
-	console.info("BruteForceSearch return : " + BruteForceSearch(st1, st2));
-	console.info("RobinKarp return : " + RobinKarp(st1, st2));
-	console.info("KMP return : " + KMP(st1, st2));
+	console.log("BruteForceSearch return : " + BruteForceSearch(st1, st2));
+	console.log("RobinKarp return : " + RobinKarp(st1, st2));
+	console.log("KMP return : " + KMP(st1, st2));
 };
 
 

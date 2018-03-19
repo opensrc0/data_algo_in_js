@@ -17,8 +17,8 @@ StringTree.prototype.print = function () {
 StringTree.prototype.printUtil = function (curr) {
     if (((curr != null && curr instanceof StringTree.Node) || curr === null)) {
         if (curr != null) {
-            console.info(" value is ::" + curr.value);
-            console.info(" count is :: " + curr.count);
+            console.log(" value is ::" + curr.value);
+            console.log(" count is :: " + curr.count);
             this.printUtil(curr.lChild);
             this.printUtil(curr.rChild);
         }
@@ -61,7 +61,7 @@ StringTree.prototype.freeTree = function () {
 
 StringTree.prototype.find = function (value) {
     var ret = this.findUtil(this.root, value);
-    console.info("Find " + value + " Return " + ret);
+    console.log("Find " + value + " Return " + ret);
     return ret;
 };
 
@@ -112,7 +112,7 @@ main = function (args) {
     tt.insert("banana");
     tt.insert("apple");
     tt.insert("mango");
-    console.info("\nSearch results for apple, banana, grapes and mango :\n");
+    console.log("\nSearch results for apple, banana, grapes and mango :\n");
     tt.find("apple");
     tt.find("banana");
     tt.find("banan");

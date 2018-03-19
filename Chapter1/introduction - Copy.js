@@ -4,9 +4,9 @@ function increment(value) {
 
 function main1() {
 	var i = 10;
-	console.info("Value of i before increment is :  " + i);
+	console.log("Value of i before increment is :  " + i);
 	increment(i);
-	console.info("Value of i before increment is :  " + i);
+	console.log("Value of i before increment is :  " + i);
 }
 
 function MyInt() {
@@ -23,14 +23,14 @@ function increment2(data) {
 function main878() {
 	var i = new MyInt;
 	i.value = 10;
-	console.info("Value of i before increment is :  " + i.value);
+	console.log("Value of i before increment is :  " + i.value);
 	increment2(i);
-	console.info("Value of i before increment is :  " + i.value);
+	console.log("Value of i before increment is :  " + i.value);
 }
 
 function printArray(arr) {
-	console.info("\n Values stored in array are : ");
-	console.info(arr[i].toString());
+	console.log("\n Values stored in array are : ");
+	console.log(arr[i].toString());
 };
 
 function swap(arr, x, y) {
@@ -41,7 +41,7 @@ function swap(arr, x, y) {
 
 function permutation(arr, i, length) {
 	if (length === i) {
-		console.info(arr);
+		console.log(arr);
 		return;
 	}
 	var j = i;
@@ -75,7 +75,7 @@ function towerOfHanoi(num, src, dst, temp) {
 		return;
 	}
 	towerOfHanoi(num - 1, src, temp, dst);
-	console.info("Move " + num + " disk  from peg " + src + " to peg " + dst);
+	console.log("Move " + num + " disk  from peg " + src + " to peg " + dst);
 	towerOfHanoi(num - 1, temp, dst, src);
 };
 
@@ -88,17 +88,17 @@ function main8768() {
 };
 
 function function2() {
-	console.info("fun2 line 1");
+	console.log("fun2 line 1");
 };
 function function1() {
-	console.info("fun1 line 1");
+	console.log("fun1 line 1");
 	function2();
-	console.info("fun1 line 2");
+	console.log("fun1 line 2");
 };
 function mainrwe() {
-	console.info("main line 1");
+	console.log("main line 1");
 	function1();
-	console.info("main line 2");
+	console.log("main line 2");
 };
 
 function maxSubArraySum(a) {
@@ -119,14 +119,14 @@ function maxSubArraySum(a) {
 
 function main989() {
 	var arr = [ 1, -2, 3, 4, -4, 6, -4, 8, 2 ];
-	console.info(maxSubArraySum(arr));
+	console.log(maxSubArraySum(arr));
 }
 
 function variableExample() {
 	var var1 = 100;
 	var var2 = 200;
 	var var3 = var1 + var2;
-	console.info("Adding " + var1 + " and " + var2 + " will give " + var3);
+	console.log("Adding " + var1 + " and " + var2 + " will give " + var3);
 };
 
 function main433() {
@@ -138,12 +138,12 @@ function arrayExample() {
 	for (var i = 0; i < 10; i++) {
 		arr[i] = i;
 	}
-	console.info(arr);
+	console.log(arr);
 };
 
 function printArray1(arr) {
-	console.info("Values stored in array are : ");
-	console.info(arr);
+	console.log("Values stored in array are : ");
+	console.log(arr);
 };
 
 function twoDArrayExample() {
@@ -161,7 +161,7 @@ function twoDArrayExample() {
 
 function print2DArray(arr, row, col) {
 	for (var i = 0; i < row; i++) {
-		console.info(arr[i]);
+		console.log(arr[i]);
 
 	}
 };
@@ -184,7 +184,7 @@ function main898() {
 	var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 	var sum = 0;
 	sum = SumArray(numbers);
-	console.info("Sum is :: " + sum);
+	console.log("Sum is :: " + sum);
 }
 
 function SequentialSearch(arr, value) {
@@ -222,12 +222,12 @@ function BinarySearch(arr, value) {
 
 function main9999() {
 	var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-	console.info(SequentialSearch(numbers, 7));
-	console.info(BinarySearch(numbers, 7));
-	console.info(BinarySearchRecursive(numbers, 7));
-	console.info(SequentialSearch(numbers, 11));
-	console.info(BinarySearch(numbers, 11));
-	console.info(BinarySearchRecursive(numbers, 11));
+	console.log(SequentialSearch(numbers, 7));
+	console.log(BinarySearch(numbers, 7));
+	console.log(BinarySearchRecursive(numbers, 7));
+	console.log(SequentialSearch(numbers, 11));
+	console.log(BinarySearch(numbers, 11));
+	console.log(BinarySearchRecursive(numbers, 11));
 }
 
 function rotateArray(a, n, k) {
@@ -262,8 +262,8 @@ function main2() {
 	var point = new coord(this);
 	point.x = 10;
 	point.y = 10;
-	console.info("X axis coord value is  " + point.x);
-	console.info("Y axis coord value is  " + point.y);
+	console.log("X axis coord value is  " + point.x);
+	console.log("Y axis coord value is  " + point.y);
 	return 0;
 };
 
@@ -274,7 +274,7 @@ function main3() {
 	refStud.rollNo = 1;
 	refStud.firstName = "john";
 	refStud.lastName = "smith";
-	console.info("Roll No:   Student Name:  " + refStud.rollNo
+	console.log("Roll No:   Student Name:  " + refStud.rollNo
 			+ refStud.firstName + refStud.lastName);
 	return 0;
 };
@@ -284,7 +284,7 @@ function main4() {
 	var y = 20;
 	var result;
 	result = this.sum(x, y);
-	console.info("Sum is : " + result);
+	console.log("Sum is : " + result);
 	return 0;
 };
 
@@ -307,12 +307,12 @@ function printInt1(number) {
 	if (number !== 0) {
 		printInt1(number);
 	}
-	console.info(digit);
+	console.log(digit);
 };
 
 function main4322() {
 	printInt1(50);
-	console.info(printHaxInt(121, 16));
+	console.log(printHaxInt(121, 16));
 }
 
 function printHaxInt(number, base) {
@@ -356,8 +356,8 @@ function fibonacci2 (n) {
 	return temp;
 }
 
-console.info(fibonacci(6));
-console.info(fibonacci2(6));
+console.log(fibonacci(6));
+console.log(fibonacci2(6));
 
 function BinarySearchRecursive(arr, value) {
 	return BinarySearchRecursiveUtil(arr,0, arr.length -1, value);

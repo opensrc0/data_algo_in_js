@@ -71,7 +71,7 @@ PriorityQueue.prototype.remove = function () {
 };
 
 PriorityQueue.prototype.print = function () {
-    console.info(this.arr);
+    console.log(this.arr);
 };
 
 PriorityQueue.prototype.isEmpty = function () {
@@ -110,14 +110,14 @@ main = function (args) {
     hp.print();
     
     PriorityQueue.HeapSort(a, comp1); // Increasing Order
-    console.info(a);
+    console.log(a);
 
     var b = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
     var hp2 = new PriorityQueue(b, comp2); // Max Heap
     hp2.print();
     
     PriorityQueue.HeapSort(b, comp2); // Decreasing Order
-    console.info(b);
+    console.log(b);
 
 };
 

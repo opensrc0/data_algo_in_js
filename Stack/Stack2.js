@@ -39,7 +39,7 @@
     };
     Stack.prototype.push = function (value) {
         if (this.size() === this.maxCapacity) {
-            console.info("size dubbelled");
+            console.log("size dubbelled");
             var newData = new Array(this.maxCapacity * 2);
             java.lang.System.arraycopy(this.data, 0, newData, 0, this.maxCapacity);
             this.data = newData;
@@ -61,7 +61,7 @@
         var topVal = this.data[this.__top];
         this.__top--;
         if (this.size() === (this.maxCapacity / 2 | 0) && this.maxCapacity > this.minCapacity) {
-            console.info("size halfed");
+            console.log("size halfed");
             this.maxCapacity = (this.maxCapacity / 2 | 0);
             var newData = new Array(this.maxCapacity);
             java.lang.System.arraycopy(this.data, 0, newData, 0, this.maxCapacity);

@@ -91,10 +91,10 @@ HashTable.prototype.remove = function (key) {
 
 HashTable.prototype.print = function () {
     for (var i = 0; i < this.tableSize; i++) {
-        console.info("Printing for index value :: " + i + "List of value printing :: ");
+        console.log("Printing for index value :: " + i + "List of value printing :: ");
         var head = this.listArray[i];
         while ((head != null)) {
-            console.info(head.data);
+            console.log(head.data);
             head = head.next;
         };
     }
@@ -137,10 +137,10 @@ HashTable.main = function (args) {
     for (var i = 100; i < 110; i++) {
         ht.insert(i);
     }
-    console.info("search 100 :: " + ht.find(100));
-    console.info("remove 100 :: " + ht.remove(100));
-    console.info("search 100 :: " + ht.find(100));
-    console.info("remove 100 :: " + ht.remove(100));
+    console.log("search 100 :: " + ht.find(100));
+    console.log("remove 100 :: " + ht.remove(100));
+    console.log("search 100 :: " + ht.find(100));
+    console.log("remove 100 :: " + ht.remove(100));
 };
 
 //HashTable.main(null);

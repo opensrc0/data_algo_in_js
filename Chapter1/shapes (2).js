@@ -23,7 +23,7 @@ Shape.prototype.perimeter = function () {
 };
 
 Shape.prototype.greeting = function () {
-    console.info("Shape Created");
+    console.log("Shape Created");
 };
 
 function Rectangle(w, l) {
@@ -70,18 +70,13 @@ Circle.prototype.perimeter = function () {
     return 2 * Math.PI * this.radius;
 };
 
+var width = 2;
+var length = 3;
+var rectangle = new Rectangle(width, length);
+console.log("Rectangle width: " + width + " and length: " + length + " Area: " + rectangle.area() + " Perimeter: " + rectangle.perimeter());
 
-function main(args) {
-    var width = 2;
-    var length = 3;
-    var rectangle = new Rectangle(width, length);
-    console.info("Rectangle width: " + width + " and length: " + length + " Area: " + rectangle.area() + " Perimeter: " + rectangle.perimeter());
+var radius = 10;
+var circle = new Circle(radius);
+console.log("Circle radius: " + radius + " Area: " + circle.area() + " Perimeter: " + circle.perimeter());
 
-    var radius = 10;
-    var circle = new Circle(radius);
-    console.info("Circle radius: " + radius + " Area: " + circle.area() + " Perimeter: " + circle.perimeter());
-
-    console.info("Shape.count : " + Shape.count)
-};
-
-main(null);
+console.log("Shape.count : " + Shape.count)

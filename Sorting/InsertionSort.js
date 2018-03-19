@@ -21,7 +21,7 @@ function main(args) {
     var array = [9, 1, 8, 2, 7, 3, 6, 4, 5];
     var bs = new InsertionSort(array);
     bs.sort();
-    console.info(array);
+    console.log(array);
 
 };
 

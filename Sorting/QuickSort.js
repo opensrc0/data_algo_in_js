@@ -39,7 +39,7 @@ main = function (args) {
     var array = [3, 4, 2, 1, 6, 5, 7, 8, 1, 1];
     var m = new QuickSort(array);
     m.sort();
-    console.info(array);
+    console.log(array);
 };
 
 main(null);

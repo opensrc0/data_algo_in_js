@@ -14,8 +14,8 @@ TwoStack.main = function (args) {
         st.StackPush2(j + 10);
     }
     for (var i = 0; i < 10; i++) {
-        console.info("stack one pop value is : " + st.StackPop1());
-        console.info("stack two pop value is : " + st.StackPop2());
+        console.log("stack one pop value is : " + st.StackPop1());
+        console.log("stack two pop value is : " + st.StackPop2());
     }
 };
 
@@ -24,7 +24,7 @@ TwoStack.prototype.StackPush1 = function (value) {
         this.data[++this.top1] = value;
     }
     else {
-        console.info("Stack is Full!");
+        console.log("Stack is Full!");
     }
 };
 
@@ -33,7 +33,7 @@ TwoStack.prototype.StackPush2 = function (value) {
         this.data[--this.top2] = value;
     }
     else {
-        console.info("Stack is Full!");
+        console.log("Stack is Full!");
     }
 };
 
@@ -43,7 +43,7 @@ TwoStack.prototype.StackPop1 = function () {
         return value;
     }
     else {
-        console.info("Stack Empty!");
+        console.log("Stack Empty!");
     }
     return -999;
 };
@@ -54,7 +54,7 @@ TwoStack.prototype.StackPop2 = function () {
         return value;
     }
     else {
-        console.info("Stack Empty!");
+        console.log("Stack Empty!");
     }
     return -999;
 };

@@ -10,7 +10,7 @@ function main() {
     for (var index = 0; index < numbers.length; index++) {
         numbers[index] = index;
     }
-    console.info("Array elements are :: " + numbers);
+    console.log("Array elements are :: " + numbers);
 };
 
 function main1() {
@@ -20,7 +20,7 @@ function main1() {
         var n = numbers[index];
         sum += n;
     }
-    console.info("Sum is :: " + sum);
+    console.log("Sum is :: " + sum);
 };
 
 function main2() {
@@ -29,7 +29,7 @@ function main2() {
     for (var i in numbers) {
         sum += numbers[i];
     }
-    console.info("Sum is :: " + sum);
+    console.log("Sum is :: " + sum);
 };
 
 function main3(args) {
@@ -40,7 +40,7 @@ function main3(args) {
         sum += numbers[i];
         i++;
     };
-    console.info("Sum is :: " + sum);
+    console.log("Sum is :: " + sum);
 };
 main();
 main1(null);

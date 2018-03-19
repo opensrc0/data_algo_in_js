@@ -152,10 +152,10 @@ CircularLinkedList.prototype.print = function () {
     }
     var temp = this.tail.next;
     while ((temp !== this.tail)) {
-        console.info(temp.value + " ");
+        console.log(temp.value + " ");
         temp = temp.next;
     };
-    console.info(temp.value);
+    console.log(temp.value);
 };
 
 CircularLinkedList.prototype.isPresent function(data){

@@ -107,7 +107,7 @@ HashTable.prototype.DeleteNode = function(key, value) {
 HashTable.prototype.Print = function() {
 	for (var i = 0; i < this.tableSize; i++) {
 		if (this.FlagDataArr[i] === HashTable.FILLED_NODE) {
-			console.info("Node at index [" + i + " ] :: " + this.DataArr[i]);
+			console.log("Node at index [" + i + " ] :: " + this.DataArr[i]);
 		}
 	}
 };

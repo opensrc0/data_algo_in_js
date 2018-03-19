@@ -44,7 +44,7 @@ main = function (args) {
     var hp = new MedianHeap();
     for (var i = 0; i < 20; i++) {
         hp.insert(arr[i]);
-        console.info("Median after insertion of " + arr[i] + " is  " + hp.getMedian());
+        console.log("Median after insertion of " + arr[i] + " is  " + hp.getMedian());
     }
 };
 

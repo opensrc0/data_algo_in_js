@@ -1,11 +1,7 @@
-function main(args) {
-	/* 
-	 This is a mult-line 
-	 comment 
-	 */
-	
-	// This is a single-line comment 
-    console.info("Hello, World!");
-};
+/* 
+ This is a mult-line 
+ comment 
+ */
 
-main(null);
+// This is a single-line comment 
+console.log("Hello, World!");

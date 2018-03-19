@@ -127,10 +127,10 @@ DoublyCircularLinkedList.prototype.print = function () {
     }
     var temp = this.head;
     while ((temp !== this.tail)) {
-        console.info(temp.value);
+        console.log(temp.value);
         temp = temp.next;
     };
-    console.info(temp.value);
+    console.log(temp.value);
 };
 
 DoublyCircularLinkedList.main = function (args) {

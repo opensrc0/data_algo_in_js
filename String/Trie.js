@@ -95,12 +95,12 @@ function main(args) {
     var d = "jain";
     t.Insert(a);
     t.Insert(d);
-    console.info(t.Find(a));
+    console.log(t.Find(a));
     t.Remove(a);
     t.Remove(d);
-    console.info(t.Find(a));
-    console.info(t.Find(c));
-    console.info(t.Find(d));
+    console.log(t.Find(a));
+    console.log(t.Find(c));
+    console.log(t.Find(d));
 };
 
 Trie.main(null);
