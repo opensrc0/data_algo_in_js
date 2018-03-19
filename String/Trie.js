@@ -25,22 +25,22 @@ Trie.prototype.Insert = function (str) {
 
 Trie.prototype.InsertUtil = function (curr, str, index) {
     if (((curr != null && curr instanceof Trie.Node) || curr === null) && ((typeof str === 'string') || str === null) && (typeof index === 'number')) {
-            if (curr == null) {
-                curr = new Trie.Node(this, str[index - 1]);
-            }
-            if (str.length === index) {
-                curr.isLastChar = true;
-            }
-            else {
-                curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)] = this.InsertUtil(curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)], str, index + 1);
-            }
-            return curr;
+        if (curr == null) {
+            curr = new Trie.Node(this, str[index - 1]);
+        }
+        if (str.length === index) {
+            curr.isLastChar = true;
+        }
+        else {
+            curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)] = this.InsertUtil(curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)], str, index + 1);
+        }
+        return curr;
     }
     else
         throw new Error('invalid arguments');
 };
 
-Trie.prototype.Remove= function (str) {
+Trie.prototype.Remove = function (str) {
     if (str == null) {
         return;
     }
@@ -50,16 +50,16 @@ Trie.prototype.Remove= function (str) {
 
 Trie.prototype.RemoveUtil = function (curr, str, index) {
     if (((curr != null && curr instanceof Trie.Node) || curr === null) && ((typeof str === 'string') || str === null) && (typeof index === 'number')) {
-            if (curr == null) {
-                return;
+        if (curr == null) {
+            return;
+        }
+        if (str.length === index) {
+            if (curr.isLastChar) {
+                curr.isLastChar = false;
             }
-            if (str.length === index) {
-                if (curr.isLastChar) {
-                    curr.isLastChar = false;
-                }
-                return;
-            }
-            this.RemoveUtil(curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)], str, index + 1);
+            return;
+        }
+        this.RemoveUtil(curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)], str, index + 1);
     }
     else
         throw new Error('invalid overload');
@@ -75,32 +75,28 @@ Trie.prototype.Find = function (str) {
 
 Trie.prototype.FindUtil = function (curr, str, index) {
     if (((curr != null && curr instanceof Trie.Node) || curr === null) && (typeof str === 'string') && (typeof index === 'number')) {
-            if (curr == null) {
-                return false;
-            }
-            if (str.length === index) {
-                return curr.isLastChar;
-            }
-            return this.FindUtil(curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)], str, index + 1);
+        if (curr == null) {
+            return false;
+        }
+        if (str.length === index) {
+            return curr.isLastChar;
+        }
+        return this.FindUtil(curr.child[str[index].charCodeAt(0) - 'a'.charCodeAt(0)], str, index + 1);
     }
     else
         throw new Error('invalid overload');
 };
 
-function main(args) {
-    var t = new Trie();
-    var a = "hemant";
-    var b = "heman";
-    var c = "hemantjain";
-    var d = "jain";
-    t.Insert(a);
-    t.Insert(d);
-    console.log(t.Find(a));
-    t.Remove(a);
-    t.Remove(d);
-    console.log(t.Find(a));
-    console.log(t.Find(c));
-    console.log(t.Find(d));
-};
-
-Trie.main(null);
+var t = new Trie();
+var a = "hemant";
+var b = "heman";
+var c = "hemantjain";
+var d = "jain";
+t.Insert(a);
+t.Insert(d);
+console.log(t.Find(a));
+t.Remove(a);
+t.Remove(d);
+console.log(t.Find(a));
+console.log(t.Find(c));
+console.log(t.Find(d));

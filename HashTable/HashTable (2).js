@@ -73,13 +73,10 @@ HashTable.prototype.Print = function () {
         }
     }
 };
-HashTable.main = function (args) {
-    var ht = new HashTable(1000);
-    ht.InsertNode(89);
-    ht.InsertNode(18);
-    ht.Print();
-    ht.DeleteNode(89);
-    ht.DeleteNode(18);
-};
 
-HashTable.main(null);
+var ht = new HashTable(1000);
+ht.InsertNode(89);
+ht.InsertNode(18);
+ht.Print();
+ht.DeleteNode(89);
+ht.DeleteNode(18);

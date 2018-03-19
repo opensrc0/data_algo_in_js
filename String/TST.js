@@ -1,10 +1,10 @@
+function TSTNode(d) {
+    this.data = d;
+    this.isLastChar = false;
+    this.left = this.equal = this.right = null;
+}
+
 function TST() {
-    function Node(d) {
-        this.data = d;
-        this.isLastChar = false;
-        this.left = this.equal = this.right = null;
-    }
-    TST.Node = Node;
     this.root = null;
 }
 
@@ -13,9 +13,9 @@ TST.prototype.insert = function (word) {
 };
 
 TST.prototype.insertUtil = function (curr, word, wordIndex) {
-    if (((curr != null && curr instanceof TST.Node) || curr === null) && ((typeof word === 'string') || word === null) && ((typeof wordIndex === 'number') || wordIndex === null)) {
+    if (((curr != null && curr instanceof TSTNode) || curr === null) && ((typeof word === 'string') || word === null) && ((typeof wordIndex === 'number') || wordIndex === null)) {
             if (curr == null)
-                curr = new TST.Node(word.charAt(wordIndex));
+                curr = new TSTNode(word.charAt(wordIndex));
             if ((word.charAt(wordIndex)).charCodeAt(0) < (curr.data).toString().charCodeAt(0))
                 curr.left = this.insertUtil(curr.left, word, wordIndex);
             else if ((word.charAt(wordIndex)).charCodeAt(0) > (curr.data).toString().charCodeAt(0))
@@ -33,7 +33,7 @@ TST.prototype.insertUtil = function (curr, word, wordIndex) {
 };
 
 TST.prototype.findUtil = function (curr, word, wordIndex) {
-    if (((curr != null && curr instanceof TST.Node) || curr === null) && ((typeof word === 'string') || word === null) && ((typeof wordIndex === 'number') || wordIndex === null)) {
+    if (((curr != null && curr instanceof TSTNode) || curr === null) && ((typeof word === 'string') || word === null) && ((typeof wordIndex === 'number') || wordIndex === null)) {
         if (curr == null)
             return false;
         if ((word.charAt(wordIndex)).charCodeAt(0) < (curr.data).toString().charCodeAt(0))

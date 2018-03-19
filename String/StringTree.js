@@ -1,21 +1,19 @@
-function StringTree() {
-    this.root = null;
-
-    function Node() {
-        this.count = 0;
-        this.lChild = null;
-        this.rChild = null;
-    }
-    StringTree.Node = Node;
+function StringTreeNode() {
+    this.count = 0;
+    this.lChild = null;
+    this.rChild = null;
 }
 
+function StringTree() {
+    this.root = null;
+}
 
 StringTree.prototype.print = function () {
     this.printUtil(this.root);
 };
 
 StringTree.prototype.printUtil = function (curr) {
-    if (((curr != null && curr instanceof StringTree.Node) || curr === null)) {
+    if (((curr != null && curr instanceof StringTreeNode) || curr === null)) {
         if (curr != null) {
             console.log(" value is ::" + curr.value);
             console.log(" count is :: " + curr.count);
@@ -32,10 +30,10 @@ StringTree.prototype.insert = function (value) {
 };
 
 StringTree.prototype.insertUtil = function (value, curr) {
-    if ((typeof value === 'string') && ((curr != null && curr instanceof StringTree.Node) || curr === null)) {
+    if ((typeof value === 'string') && ((curr != null && curr instanceof StringTreeNode) || curr === null)) {
         var compare;
         if (curr == null) {
-            curr = new StringTree.Node(this);
+            curr = new StringTreeNode(this);
             curr.value = value;
             curr.lChild = curr.rChild = null;
             curr.count = 1;
@@ -66,7 +64,7 @@ StringTree.prototype.find = function (value) {
 };
 
 StringTree.prototype.findUtil = function (curr, value) {
-    if (((curr != null && curr instanceof StringTree.Node) || curr === null) && (typeof value === 'string')) {
+    if (((curr != null && curr instanceof StringTreeNode) || curr === null) && (typeof value === 'string')) {
         var compare;
         if (curr == null)
             return false;
@@ -84,12 +82,12 @@ StringTree.prototype.findUtil = function (curr, value) {
         throw new Error('invalid overload');
 };
 
-StringTree.prototype.frequency= function (value) {
+StringTree.prototype.frequency = function (value) {
     return this.frequencyUtil(this.root, value);
 };
 
 StringTree.prototype.frequencyUtil = function (curr, value) {
-    if (((curr != null && curr instanceof StringTree.Node) || curr === null) && (typeof value === 'string')) {
+    if (((curr != null && curr instanceof StringTreeNode) || curr === null) && (typeof value === 'string')) {
         var compare;
         if (curr == null)
             return 0;
@@ -107,17 +105,13 @@ StringTree.prototype.frequencyUtil = function (curr, value) {
         throw new Error('invalid overload');
 };
 
-main = function (args) {
-    var tt = new StringTree();
-    tt.insert("banana");
-    tt.insert("apple");
-    tt.insert("mango");
-    console.log("\nSearch results for apple, banana, grapes and mango :\n");
-    tt.find("apple");
-    tt.find("banana");
-    tt.find("banan");
-    tt.find("grapes");
-    tt.find("mango");
-};
-
-StringTree.main(null);
+var tt = new StringTree();
+tt.insert("banana");
+tt.insert("apple");
+tt.insert("mango");
+console.log("\nSearch results for apple, banana, grapes and mango :\n");
+tt.find("apple");
+tt.find("banana");
+tt.find("banan");
+tt.find("grapes");
+tt.find("mango");

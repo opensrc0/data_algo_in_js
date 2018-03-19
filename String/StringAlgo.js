@@ -261,9 +261,7 @@ function printAnagramUtil(a, max, n) {
 			a[max - 1] = temp;
 		}
 	}
-
 };
-
 
 printAnagram("12345");
 
@@ -293,8 +291,7 @@ function addBinary(first, second) {
 		totalIndex--;
 		size1--;
 		size2--;
-	}
-	;
+	};
 	total[totalIndex] = (carry === 0) ? '0' : '1';
 	return total.join("");
 };

@@ -5,17 +5,17 @@ swap = function (arr, first, second) {
 };
 
 quickSelect = function (arr, lower, upper, k) {
-    if (((arr != null && arr instanceof Array)) && ((typeof lower === 'number')) && ((typeof upper === 'number')) && ((typeof k === 'number'))) {
+    if ((arr != null && arr instanceof Array) && (typeof lower === 'number') && (typeof upper === 'number') && (typeof k === 'number')) {
         if (upper <= lower)
             return;
         var pivot = arr[lower];
         var start = lower;
         var stop = upper;
-        while ((lower < upper)) {
-            while ((arr[lower] <= pivot && lower < upper)) {
+        while (lower < upper) {
+            while (arr[lower] <= pivot && lower < upper) {
                 lower++;
             };
-            while ((arr[upper] > pivot && lower <= upper)) {
+            while (arr[upper] > pivot && lower <= upper) {
                 upper--;
             };
             if (lower < upper) {

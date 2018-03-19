@@ -2,7 +2,7 @@ defaultCmp = function (x, y) {
     return x - y;
 };
 
-export function PriorityQueue(array, cmp) {
+function PriorityQueue(array, cmp) {
     this.comp = (typeof cmp === 'function' && cmp != null) ? cmp : defaultCmp;
 
     if (array != null && array instanceof Array) {

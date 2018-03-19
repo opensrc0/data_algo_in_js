@@ -7,7 +7,7 @@ MergeSort.prototype.merge = function (arr, tempArray, lowerIndex, middleIndex, u
     var upperStart = middleIndex + 1;
     var upperStop = upperIndex;
     var count = lowerIndex;
-    while ((lowerStart <= lowerStop && upperStart <= upperStop)) {
+    while (lowerStart <= lowerStop && upperStart <= upperStop) {
         if (arr[lowerStart] < arr[upperStart]) {
             tempArray[count++] = arr[lowerStart++];
         }
@@ -15,10 +15,10 @@ MergeSort.prototype.merge = function (arr, tempArray, lowerIndex, middleIndex, u
             tempArray[count++] = arr[upperStart++];
         }
     };
-    while ((lowerStart <= lowerStop)) {
+    while (lowerStart <= lowerStop) {
         tempArray[count++] = arr[lowerStart++];
     };
-    while ((upperStart <= upperStop)) {
+    while (upperStart <= upperStop) {
         tempArray[count++] = arr[upperStart++];
     };
     for (var i = lowerIndex; i <= upperIndex; i++) {

@@ -48,13 +48,9 @@ CountMap.prototype.find = function (key) {
     return this.hm.find(key);
 };
 
-CountMap.main = function (args) {
-    var cm = new CountMap();
-    cm.insert(2);
-    cm.insert(2);
-    cm.remove(2);
-    console.log("count is : " + cm.get(2));
-    console.log("count is : " + cm.get(3));
-};
-
-CountMap.main(null);
+var cm = new CountMap();
+cm.insert(2);
+cm.insert(2);
+cm.remove(2);
+console.log("count is : " + cm.get(2));
+console.log("count is : " + cm.get(3));

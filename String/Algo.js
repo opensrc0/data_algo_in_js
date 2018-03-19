@@ -1,14 +1,4 @@
-main = function(args) {
-	var st1 = "hello, world!";
-	var st2 = "world";
-	console.log("BruteForceSearch return : " + BruteForceSearch(st1, st2));
-	console.log("RobinKarp return : " + RobinKarp(st1, st2));
-	console.log("KMP return : " + KMP(st1, st2));
-};
-
-
-
-BruteForceSearch = function(text, pattern) {
+BruteForceSearch = function (text, pattern) {
 	if ((typeof text === 'string') && (typeof pattern === 'string')) {
 		var i = 0;
 		var j = 0;
@@ -25,12 +15,12 @@ BruteForceSearch = function(text, pattern) {
 			i++;
 		};
 		return -1;
-	} 
+	}
 	else
 		throw new Error('invalid arguments');
 };
 
-RobinKarp = function(text, pattern) {
+RobinKarp = function (text, pattern) {
 
 	if ((typeof text === 'string') && (typeof pattern === 'string')) {
 		return RobinKarpUtil(text, pattern);
@@ -38,7 +28,7 @@ RobinKarp = function(text, pattern) {
 		throw new Error('invalid overload');
 };
 
-RobinKarpUtil = function(text, pattern) {
+RobinKarpUtil = function (text, pattern) {
 	var n = text.length;
 	var m = pattern.length;
 	var i;
@@ -68,8 +58,8 @@ RobinKarpUtil = function(text, pattern) {
 				return i;
 		}
 		TextHash = (((TextHash - (text[i]).charCodeAt(0) * powm) << 1) + (text[i
-				+ m]).charCodeAt(0))
-				% prime;
+			+ m]).charCodeAt(0))
+			% prime;
 		if (TextHash < 0) {
 			TextHash = (TextHash + prime);
 		}
@@ -77,7 +67,7 @@ RobinKarpUtil = function(text, pattern) {
 	return -1;
 };
 
-KMPPreprocess = function(pattern, ShiftArr) {
+KMPPreprocess = function (pattern, ShiftArr) {
 	var m = pattern.length;
 	var i = 0;
 	var j = -1;
@@ -92,14 +82,14 @@ KMPPreprocess = function(pattern, ShiftArr) {
 	};
 };
 
-KMP = function(text, pattern) {
+KMP = function (text, pattern) {
 	if ((typeof text === 'string') && (typeof pattern === 'string')) {
 		return KMPUtil(text, pattern);
 	} else
 		throw new Error('invalid overload');
 };
 
-KMPUtil = function(text, pattern) {
+KMPUtil = function (text, pattern) {
 	var i = 0;
 	var j = 0;
 	var n = text.length;
@@ -118,7 +108,7 @@ KMPUtil = function(text, pattern) {
 	return -1;
 };
 
-KMPFindCount = function(text, pattern) {
+KMPFindCount = function (text, pattern) {
 	var i = 0;
 	var j = 0;
 	var count = 0;
@@ -140,4 +130,8 @@ KMPFindCount = function(text, pattern) {
 	return count;
 };
 
-main(null);
+var st1 = "hello, world!";
+var st2 = "world";
+console.log("BruteForceSearch return : " + BruteForceSearch(st1, st2));
+console.log("RobinKarp return : " + RobinKarp(st1, st2));
+console.log("KMP return : " + KMP(st1, st2));

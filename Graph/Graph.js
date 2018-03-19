@@ -1,5 +1,3 @@
-import PriorityQueue from 'PriorityQueue.js';
-
 MAX_VALUE = 99999;
 
 function Graph(cnt) {

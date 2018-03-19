@@ -14,11 +14,11 @@ QuickSort.prototype.quickSortUtil = function (arr, lower, upper) {
     var pivot = arr[lower];
     var start = lower;
     var stop = upper;
-    while ((lower < upper)) {
-        while ((arr[lower] <= pivot && lower < upper)) {
+    while (lower < upper) {
+        while (arr[lower] <= pivot && lower < upper) {
             lower++;
         };
-        while ((arr[upper] > pivot && lower <= upper)) {
+        while (arr[upper] > pivot && lower <= upper) {
             upper--;
         };
         if (lower < upper) {
