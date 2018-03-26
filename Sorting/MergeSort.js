@@ -42,11 +42,7 @@ MergeSort.prototype.sort = function () {
     this.mergeSrt(this.arr, tempArray, 0, size - 1);
 };
 
-function main(args) {
-    var array = [3, 4, 2, 1, 6, 5, 7, 8, 1, 1];
-    var m = new MergeSort(array);
-    m.sort();
-    console.log(array);
-};
-
-main(null);
+var array = [3, 4, 2, 1, 6, 5, 7, 8, 1, 1];
+var m = new MergeSort(array);
+m.sort();
+console.log(array);

@@ -1,13 +1,5 @@
-var i = 1000;
-Object.freeze(i)
-i = 2000;
-console.log(i);
-
 var BulbSize = { "SMALL": 0, "MEDIUM": 1, "LARGE": 2 }
 Object.freeze(BulbSize)
-
-BulbSize = { "SMALL": 0, "MEDIUM1": 1, "LARGE": 2 }
-console.log(BulbSize);
 
 function Shape() {
     Shape.count++;
@@ -49,7 +41,6 @@ Rectangle.prototype.area = function () {
 Rectangle.prototype.perimeter = function () {
     return 2 * (this.width + this.length);
 };
-
 
 function Circle(r) {
     Shape.call(this);

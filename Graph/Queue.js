@@ -20,10 +20,10 @@ Queue.prototype.remove = function () {
 };
 
 Queue.prototype.isEmpty = function () {
-	return (this.stk1.length + this.stk2.length) === 0
+    return (this.stk1.length + this.stk2.length) === 0
 }
 
-Queue.main = function (args) {
+function main() {
     var que = new Queue();
     que.add(1);
     que.add(11);
@@ -41,4 +41,4 @@ Queue.main = function (args) {
     console.log(que.remove());
 };
 
-//Queue.main(null);
+//main();

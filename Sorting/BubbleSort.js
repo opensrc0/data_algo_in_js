@@ -15,7 +15,7 @@ BubbleSort.prototype.sort = function () {
     var i;
     var j;
     var temp;
-    for (i = 0; i < (size - 1) ; i++) {
+    for (i = 0; i < (size - 1); i++) {
         for (j = 0; j < size - i - 1; j++) {
             if (this.more(this.arr[j], this.arr[j + 1])) {
                 temp = this.arr[j];
@@ -45,11 +45,7 @@ BubbleSort.prototype.sort2 = function () {
     }
 };
 
-function main(args) {
-    var array = [9, 1, 8, 2, 7, 3, 6, 4, 5];
-    var bs = new BubbleSort(array);
-    bs.sort2();
-    console.log(array);
-};
-
-BubbleSort.main(null);
+var array = [9, 1, 8, 2, 7, 3, 6, 4, 5];
+var bs = new BubbleSort(array);
+bs.sort2();
+console.log(array);

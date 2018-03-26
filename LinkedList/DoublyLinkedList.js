@@ -1,24 +1,13 @@
+function DoublyLinkedListNode(v, nxt, prv) {
+    this.value = v;
+    this.next = nxt;
+    this.prev = prv;
+}
+
 function DoublyLinkedList() {
     this.head = null;
     this.tail = null;
     this.length = 0;
-
-    function Node(v, nxt, prv) {
-        if ((typeof v === 'number') && ((nxt != null && nxt instanceof DoublyLinkedList.Node) || nxt === null) && ((prv != null && prv instanceof DoublyLinkedList.Node) || prv === null)) {
-            this.value = v;
-            this.next = nxt;
-            this.prev = prv;
-        }
-        else if ((typeof v === 'number') && nxt === undefined && prv === undefined) {
-            this.value = v;
-            this.next = null;
-            this.prev = null;
-        }
-        else
-            throw new Error('invalid overload');
-    }
-
-    DoublyLinkedList.Node = Node;
 }
 
 DoublyLinkedList.prototype.size = function () {
@@ -36,7 +25,7 @@ DoublyLinkedList.prototype.peek = function () {
 };
 
 DoublyLinkedList.prototype.addHead = function (value) {
-    var newNode = new DoublyLinkedList.Node(value, null, null);
+    var newNode = new DoublyLinkedListNode(value, null, null);
     if (this.length === 0) {
         this.tail = this.head = newNode;
     }
@@ -49,7 +38,7 @@ DoublyLinkedList.prototype.addHead = function (value) {
 };
 
 DoublyLinkedList.prototype.addTail = function (value) {
-    var newNode = new DoublyLinkedList.Node(value, null, null);
+    var newNode = new DoublyLinkedListNode(value, null, null);
     if (this.length === 0) {
         this.head = this.tail = newNode;
     }
@@ -127,7 +116,7 @@ DoublyLinkedList.prototype.print = function () {
 };
 
 DoublyLinkedList.prototype.sortedInsert = function (value) {
-    var temp = new DoublyLinkedList.Node(value);
+    var temp = new DoublyLinkedListNode(value, null, null);
     var curr = this.head;
     if (curr == null) {
         this.head = temp;
@@ -217,7 +206,7 @@ function main(args) {
     ll.addHead(5);
     ll.addHead(6);
     ll.removeHead();
-    
+
     ll.print();
     ll.freeList();
     ll.addHead(11);

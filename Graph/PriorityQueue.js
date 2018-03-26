@@ -8,7 +8,7 @@ function PriorityQueue(array, cmp) {
     if (array != null && array instanceof Array) {
         this.length = array.length;
         this.arr = [0].concat(array);
-        for (var i = Math.floor(this.length / 2) ; i > 0; i--) {
+        for (var i = Math.floor(this.length / 2); i > 0; i--) {
             this.proclateDown(i);
         }
     }
@@ -102,7 +102,7 @@ comp1 = function (x, y) {
     return x - y;
 };
 
-PriorityQueue.main = function (args) {
+function main() {
     var a = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
     var hp = new PriorityQueue(a, comp1);
     hp.print();
@@ -110,4 +110,4 @@ PriorityQueue.main = function (args) {
     console.log(a);
 };
 
-//PriorityQueue.main(null);
+//main();

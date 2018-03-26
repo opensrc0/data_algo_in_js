@@ -57,7 +57,7 @@ HashTable.prototype.insert = function (key, data) {
     var index = this.ComputeHash(key);
     var head = this.listArray[index];
     while ((head != null)) {
-        if (HashTable.comp(head.key, key) === 0 ) {
+        if (HashTable.comp(head.key, key) === 0) {
             head.data = data;
             return;
         }
@@ -130,15 +130,11 @@ function DemoCompare(first, second) {
     return first - second;
 }
 
-HashTable.main = function (args) {
-    var ht = new HashTable(DemoCompare, DemoHashFun);
-    for (var i = 100; i < 110; i++) {
-        ht.insert(i);
-    }
-    console.log("search 100 :: " + ht.find(100));
-    console.log("remove 100 :: " + ht.remove(100));
-    console.log("search 100 :: " + ht.find(100));
-    console.log("remove 100 :: " + ht.remove(100));
-};
-
-HashTable.main(null);
+var ht = new HashTable(DemoCompare, DemoHashFun);
+for (var i = 100; i < 110; i++) {
+    ht.insert(i);
+}
+console.log("search 100 :: " + ht.find(100));
+console.log("remove 100 :: " + ht.remove(100));
+console.log("search 100 :: " + ht.find(100));
+console.log("remove 100 :: " + ht.remove(100));

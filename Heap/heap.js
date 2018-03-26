@@ -1,5 +1,9 @@
-less = function (x, y) {
+function less(x, y) {
     return x - y;
+};
+
+function more(x, y) {
+    return y - x;
 };
 
 function PriorityQueue(array, cmp) {
@@ -8,7 +12,7 @@ function PriorityQueue(array, cmp) {
     if (array != null && array instanceof Array) {
         this.length = array.length;
         this.arr = [0].concat(array);
-        for (var i = Math.floor(this.length / 2) ; i > 0; i--) {
+        for (var i = Math.floor(this.length / 2); i > 0; i--) {
             this.proclateDown(i);
         }
     }
@@ -96,69 +100,46 @@ PriorityQueue.HeapSort = function (array, cmp) {
     }
 };
 
-less = function (x, y) {
-    return x - y;
-};
+function IsMinHeap(arr) {
+    var size = arr.length;
+    var mid = Math.floor((size - 2) / 2);
 
-more = function (x, y) {
-    return y - x;
-};
-
-main = function (args) {
-    var a = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
-    var hp = new PriorityQueue(a, comp1); // Min Heap
-    hp.print();
-    
-    PriorityQueue.HeapSort(a, comp1); // Increasing Order
-    console.log(a);
-
-    var b = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
-    var hp2 = new PriorityQueue(b, comp2); // Max Heap
-    hp2.print();
-    
-    PriorityQueue.HeapSort(b, comp2); // Decreasing Order
-    console.log(b);
-
-};
-
-function IsMinHeap(arr)
-{
-	var size = arr.length;
-	var mid = Math.floor((size - 2) / 2);
-	
-	for (i = 0; i <= mid; i++)
-	{
-		if (2 * i + 1 < size)
-		{
-			if (arr[i] > arr[2 * i + 1])
-				return false;
-		}
-		if (2 * i + 2<size)
-		{
-			if (arr[i] > arr[2 * i + 2])
-				return false;
-		}
-	}
-	return true;
+    for (i = 0; i <= mid; i++) {
+        if (2 * i + 1 < size) {
+            if (arr[i] > arr[2 * i + 1])
+                return false;
+        }
+        if (2 * i + 2 < size) {
+            if (arr[i] > arr[2 * i + 2])
+                return false;
+        }
+    }
+    return true;
 }
 
 
-function IsMaxHeap(arr)
-{
-	var size = arr.length;
-	var mid = Math.floor((size - 2) / 2);
-	
-	for (i = 0; i <= mid; i++)
-	{
-		if (2 * i + 1 < size && arr[i] < arr[2 * i + 1])
-			return false;
-		
-		if (2 * i + 2 < size && arr[i] < arr[2 * i + 2])
-			return false;
-	}
-	return true;
+function IsMaxHeap(arr) {
+    var size = arr.length;
+    var mid = Math.floor((size - 2) / 2);
+
+    for (i = 0; i <= mid; i++) {
+        if (2 * i + 1 < size && arr[i] < arr[2 * i + 1])
+            return false;
+
+        if (2 * i + 2 < size && arr[i] < arr[2 * i + 2])
+            return false;
+    }
+    return true;
 }
 
+var a = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
+var hp = new PriorityQueue(a, comp1); // Min Heap
+hp.print();
 
-
-main(null);
+PriorityQueue.HeapSort(a, comp1); // Increasing Order
+console.log(a);
+var b = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
+var hp2 = new PriorityQueue(b, comp2); // Max Heap
+hp2.print();
+PriorityQueue.HeapSort(b, comp2); // Decreasing Order
+console.log(b);

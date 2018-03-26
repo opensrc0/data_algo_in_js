@@ -41,15 +41,11 @@ Stack.prototype.print = function () {
     }
 };
 
-function main(args) {
-    var s = new Stack(1000);
-    for (var i = 1; i <= 100; i++) {
-        s.push(i);
-    }
-    for (var i = 1; i <= 50; i++) {
-        s.pop();
-    }
-    s.print();
-};
-    
-Stack.main(null);
+var s = new Stack(1000);
+for (var i = 1; i <= 100; i++) {
+    s.push(i);
+}
+for (var i = 1; i <= 50; i++) {
+    s.pop();
+}
+s.print();

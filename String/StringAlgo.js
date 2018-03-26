@@ -7,7 +7,7 @@ function matchExpUtil(exp, str, i, j) {
 		return true;
 	}
 	if ((i === exp.length && j !== str.length)
-			|| (i !== exp.length && j === str.length)) {
+		|| (i !== exp.length && j === str.length)) {
 		return false;
 	}
 	if (exp[i] === '?' || exp[i] === str[j]) {
@@ -15,8 +15,8 @@ function matchExpUtil(exp, str, i, j) {
 	}
 	if (exp[i] === '*') {
 		return matchExpUtil(exp, str, i + 1, j)
-				|| matchExpUtil(exp, str, i, j + 1)
-				|| matchExpUtil(exp, str, i + 1, j + 1);
+			|| matchExpUtil(exp, str, i, j + 1)
+			|| matchExpUtil(exp, str, i + 1, j + 1);
 	}
 	return false;
 };
@@ -125,8 +125,8 @@ function isPermutation(s1, s2) {
 	return true;
 };
 
-isPermutation("apple","plepa");
-isPermutation("apple","plepb");
+isPermutation("apple", "plepa");
+isPermutation("apple", "plepb");
 
 function isPalindrome(str) {
 	var i = 0;
@@ -161,7 +161,7 @@ function pow(x, n) {
 		return (x * value * value);
 	}
 };
-console.log(pow(2,10))
+console.log(pow(2, 10))
 
 function myStrcmp(a, b) {
 	var index = 0;
@@ -231,7 +231,7 @@ function reverseWords(str) {
 			upper++;
 		}
 	}
-	reverseArray(a, lower, upper-1);
+	reverseArray(a, lower, upper - 1);
 	reverseArray(a, 0, length - 1);
 	return a.join("");
 };

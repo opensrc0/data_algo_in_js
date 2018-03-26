@@ -14,19 +14,19 @@ TST.prototype.insert = function (word) {
 
 TST.prototype.insertUtil = function (curr, word, wordIndex) {
     if (((curr != null && curr instanceof TSTNode) || curr === null) && ((typeof word === 'string') || word === null) && ((typeof wordIndex === 'number') || wordIndex === null)) {
-            if (curr == null)
-                curr = new TSTNode(word.charAt(wordIndex));
-            if ((word.charAt(wordIndex)).charCodeAt(0) < (curr.data).toString().charCodeAt(0))
-                curr.left = this.insertUtil(curr.left, word, wordIndex);
-            else if ((word.charAt(wordIndex)).charCodeAt(0) > (curr.data).toString().charCodeAt(0))
-                curr.right = this.insertUtil(curr.right, word, wordIndex);
-            else {
-                if (wordIndex < word.length - 1)
-                    curr.equal = this.insertUtil(curr.equal, word, wordIndex + 1);
-                else
-                    curr.isLastChar = true;
-            }
-            return curr;
+        if (curr == null)
+            curr = new TSTNode(word.charAt(wordIndex));
+        if ((word.charAt(wordIndex)).charCodeAt(0) < (curr.data).toString().charCodeAt(0))
+            curr.left = this.insertUtil(curr.left, word, wordIndex);
+        else if ((word.charAt(wordIndex)).charCodeAt(0) > (curr.data).toString().charCodeAt(0))
+            curr.right = this.insertUtil(curr.right, word, wordIndex);
+        else {
+            if (wordIndex < word.length - 1)
+                curr.equal = this.insertUtil(curr.equal, word, wordIndex + 1);
+            else
+                curr.isLastChar = true;
+        }
+        return curr;
     }
     else
         throw new Error('invalid overload');
@@ -59,21 +59,18 @@ TST.prototype.find = function (word) {
     return ret;
 };
 
-TST.main = function (args) {
-    var tt = new TST();
-    tt.insert("banana");
-    tt.insert("apple");
-    tt.insert("mango");
-    console.log("\nSearch results for apple, banana, grapes and mango :");
-    tt.find("apple");
-    tt.find("banana");
-    tt.find("mango");
-    tt.find("app");
-    tt.find("applee");
-    tt.find("grapes");
-};
+var tt = new TST();
+tt.insert("banana");
+tt.insert("apple");
+tt.insert("mango");
+console.log("\nSearch results for apple, banana, grapes and mango :");
+tt.find("apple");
+tt.find("banana");
+tt.find("mango");
+tt.find("app");
+tt.find("applee");
+tt.find("grapes");
 
-TST.main(null);
 /*
 Search results for apple, banana, grapes and mango :
 TST.js:56 apple ::  Found 

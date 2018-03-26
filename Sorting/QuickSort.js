@@ -35,11 +35,7 @@ QuickSort.prototype.sort = function () {
     this.quickSortUtil(this.arr, 0, size - 1);
 };
 
-main = function (args) {
-    var array = [3, 4, 2, 1, 6, 5, 7, 8, 1, 1];
-    var m = new QuickSort(array);
-    m.sort();
-    console.log(array);
-};
-
-main(null);
+var array = [3, 4, 2, 1, 6, 5, 7, 8, 1, 1];
+var m = new QuickSort(array);
+m.sort();
+console.log(array);

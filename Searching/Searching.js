@@ -895,7 +895,7 @@ function checkPermutation2(array1, array2) {
         } else {
             ht[array1[i]] -= 1
             if (ht[array1[i]] == 0) {
-                delete  ht[array2[i]]
+                delete ht[array2[i]]
             }
         }
     }
@@ -905,8 +905,8 @@ function checkPermutation2(array1, array2) {
 var first = [1, 2, 3, 1, 2, 3, 5, 6, 7, 7, 8, 9, 3, 4, 5]
 var second = [1, 2, 4, 5, 3, 1, 2, 3, 5, 6, 7, 7, 8, 9, 3]
 
-console.log( "checkPermutation " + checkPermutation(first, second))
-console.log( "checkPermutation2 " + checkPermutation2(first, second))
+console.log("checkPermutation " + checkPermutation(first, second))
+console.log("checkPermutation2 " + checkPermutation2(first, second))
 
 function removeDuplicates(array) {
     var j = 0;

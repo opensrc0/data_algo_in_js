@@ -72,21 +72,15 @@ printFirstRepeating = function (arr) {
     }
 };
 
-
-
-main = function (args) {
-    var first = "hello";
-    var second = "elloh";
-    var third = "world";
-    console.log("isAnagram : " + isAnagram(first, second));
-    console.log("isAnagram : " + isAnagram(first, third));
-    removeDuplicate(first);
-    console.log(first);
-    var arr = [1, 2, 3, 5, 6, 7, 8, 9, 10];
-    console.log(findMissing(arr, 1, 10));
-    var arr1 = [1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 1];
-    printRepeating(arr1);
-    printFirstRepeating(arr1);
-};
-
-main();
+var first = "hello";
+var second = "elloh";
+var third = "world";
+console.log("isAnagram : " + isAnagram(first, second));
+console.log("isAnagram : " + isAnagram(first, third));
+removeDuplicate(first);
+console.log(first);
+var arr = [1, 2, 3, 5, 6, 7, 8, 9, 10];
+console.log(findMissing(arr, 1, 10));
+var arr1 = [1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 1];
+printRepeating(arr1);
+printFirstRepeating(arr1);

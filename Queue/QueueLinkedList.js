@@ -53,15 +53,11 @@ Queue.print = function () {
     };
 };
 
-Queue.main = function (args) {
-    var q = new Queue();
-    for (var i = 1; i <= 100; i++) {
-        q.add(i);
-    }
-    for (var i = 1; i <= 50; i++) {
-        q.remove();
-    }
-    q.print();
-};
-
-Queue.main(null);
+var q = new Queue();
+for (var i = 1; i <= 100; i++) {
+    q.add(i);
+}
+for (var i = 1; i <= 50; i++) {
+    q.remove();
+}
+q.print();

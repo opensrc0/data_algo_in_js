@@ -132,7 +132,7 @@ function DemoCompare(first, second) {
     return first - second;
 }
 
-HashTable.main = function (args) {
+function main(args) {
     var ht = new HashTable(DemoCompare, DemoHashFun);
     for (var i = 100; i < 110; i++) {
         ht.insert(i);
@@ -143,4 +143,4 @@ HashTable.main = function (args) {
     console.log("remove 100 :: " + ht.remove(100));
 };
 
-//HashTable.main(null);
+//main(null);

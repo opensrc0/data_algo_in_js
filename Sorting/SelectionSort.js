@@ -44,11 +44,7 @@ SelectionSort.prototype.sort2 = function () {
     }
 };
 
-function main(args) {
-    var array = [9, 1, 8, 2, 7, 3, 6, 4, 5];
-    var bs = new SelectionSort(array);
-    bs.sort2();
-    console.log(array);
-};
-
-main(null);
+var array = [9, 1, 8, 2, 7, 3, 6, 4, 5];
+var bs = new SelectionSort(array);
+bs.sort2();
+console.log(array);

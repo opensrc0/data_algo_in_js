@@ -41,14 +41,10 @@ Queue.prototype.length = function () {
     return this.size;
 };
 
-function main() {
-    var que = new Queue();
-    for (var i = 0; i < 20; i++) {
-        que.add(i);
-    }
-    for (var i = 0; i < 22; i++) {
-        console.log(que.remove());
-    }
-};
-
-//Queue.main();
+var que = new Queue();
+for (var i = 0; i < 20; i++) {
+    que.add(i);
+}
+for (var i = 0; i < 22; i++) {
+    console.log(que.remove());
+}

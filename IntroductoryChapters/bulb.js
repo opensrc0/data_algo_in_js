@@ -3,10 +3,10 @@ Object.freeze(BulbSize)
 
 //Constructor
 function Bulb() {
-	//Instance Variables 
+    //Instance Variables 
     this.isOn = false;
     this.size = BulbSize.MEDIUM;
-    
+
     //Class Variables 
     Bulb.TotalBulbCount++;
 }
@@ -33,7 +33,7 @@ Bulb.prototype.isOnFun = function () {
     return this.isOn;
 };
 
-var AdvanceBulb = function() {
+var AdvanceBulb = function () {
     Bulb.call(this);
     this.intensity = 0;
 }

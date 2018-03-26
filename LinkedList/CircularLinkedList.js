@@ -1,21 +1,11 @@
+function CircularLinkedListNode(v, n) {
+    this.value = v;
+    this.next = n;
+}
+
 function CircularLinkedList() {
     this.length = 0;
     this.tail = null;
-
-    function Node(v, n) {
-        if ((typeof v === 'number') && ((n != null && n instanceof CircularLinkedList.Node) || n === null)) {
-            this.value = v;
-            this.next = n;
-        }
-        else if ((typeof v === 'number') && n === undefined) {
-            this.value = v;
-            this.next = null;
-        }
-        else
-            throw new Error('invalid overload');
-    }
-
-    CircularLinkedList.Node = Node;
 }
 
 CircularLinkedList.prototype.size = function () {
@@ -33,7 +23,7 @@ CircularLinkedList.prototype.peek = function () {
 };
 
 CircularLinkedList.prototype.addTail = function (value) {
-    var temp = new CircularLinkedList.Node(value, null);
+    var temp = new CircularLinkedListNode(value, null);
     if (this.isEmpty()) {
         this.tail = temp;
         temp.next = temp;
@@ -47,7 +37,7 @@ CircularLinkedList.prototype.addTail = function (value) {
 };
 
 CircularLinkedList.prototype.addHead = function (value) {
-    var temp = new CircularLinkedList.Node(value, null);
+    var temp = new CircularLinkedListNode(value, null);
     if (this.isEmpty()) {
         this.tail = temp;
         temp.next = temp;
@@ -158,15 +148,15 @@ CircularLinkedList.prototype.print = function () {
     console.log(temp.value);
 };
 
-CircularLinkedList.prototype.isPresent function(data){
-	temp = this.tail;
-	size = this.size();
-	for(var i=0;i<size;i++){
-		if(temp.value === data)
-			return true;
-		temp = temp.next;
-	}
-	return false;
+CircularLinkedList.prototype.isPresent = function (data) {
+    temp = this.tail;
+    size = this.size();
+    for (var i = 0; i < size; i++) {
+        if (temp.value === data)
+            return true;
+        temp = temp.next;
+    }
+    return false;
 }
 
 

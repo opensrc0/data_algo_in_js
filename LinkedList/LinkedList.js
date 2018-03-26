@@ -1,19 +1,10 @@
+function LinkedListNode(v, n) {
+    this.value = v;
+    this.next = n;
+}
+
 function LinkedList() {
     this.length = 0;
-    function Node(v, n) {
-        if ((typeof v === 'number') && ((n != null && n instanceof LinkedList.Node) || n === null)) {
-            this.value = v;
-            this.next = n;
-        }
-        else if ((typeof v === 'number') && n === undefined) {
-            this.value = v;
-            this.next = null;
-        }
-        else
-            throw new Error('invalid arguments');
-    }
-
-    LinkedList.Node = Node;
 }
 
 LinkedList.prototype.size = function () {
@@ -31,12 +22,12 @@ LinkedList.prototype.peek = function () {
 };
 
 LinkedList.prototype.addHead = function (value) {
-    this.head = new LinkedList.Node(value, this.head);
+    this.head = new LinkedListNode(value, this.head);
     this.length++;
 };
 
 LinkedList.prototype.addTail = function (value) {
-    var newNode = new LinkedList.Node(value, null);
+    var newNode = new LinkedListNode(value, null);
     var curr = this.head;
     if (this.head == null) {
         this.head = newNode;
@@ -141,7 +132,7 @@ LinkedList.prototype.CopyListReversed = function () {
     var tempNode2 = null;
     var curr = this.head;
     while ((curr != null)) {
-        tempNode2 = new LinkedList.Node(curr.value, tempNode);
+        tempNode2 = new LinkedListNode(curr.value, tempNode);
         curr = curr.next;
         tempNode = tempNode2;
     };
@@ -157,11 +148,11 @@ LinkedList.prototype.copyList = function () {
     var curr = this.head;
     if (curr == null)
         return null;
-    headNode = new LinkedList.Node(curr.value, null);
+    headNode = new LinkedListNode(curr.value, null);
     tailNode = headNode;
     curr = curr.next;
     while ((curr != null)) {
-        tempNode = new LinkedList.Node(curr.value, null);
+        tempNode = new LinkedListNode(curr.value, null);
         tailNode.next = tempNode;
         tailNode = tempNode;
         curr = curr.next;
@@ -176,7 +167,7 @@ LinkedList.prototype.compareList = function (ll) {
 };
 
 LinkedList.prototype.compareListUtil = function (head1, head2) {
-    if (((head1 != null && head1 instanceof LinkedList.Node) || head1 === null) && ((head2 != null && head2 instanceof LinkedList.Node) || head2 === null)) {
+    if (((head1 != null && head1 instanceof LinkedListNode) || head1 === null) && ((head2 != null && head2 instanceof LinkedListNode) || head2 === null)) {
         if (head1 == null && head2 == null)
             return true;
         else if ((head1 == null) || (head2 == null) || (head1.value !== head2.value))
@@ -284,7 +275,7 @@ LinkedList.prototype.print = function () {
 };
 
 LinkedList.prototype.sortedInsert = function (value) {
-    var newNode = new LinkedList.Node(value, null);
+    var newNode = new LinkedListNode(value, null);
     var curr = this.head;
     if (curr == null || curr.value > value) {
         newNode.next = this.head;

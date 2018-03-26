@@ -1,24 +1,13 @@
+function DoublyCircularLinkedListNode(v, nxt, prv) {
+    this.value = v;
+    this.next = nxt;
+    this.prev = prv;
+}
+
 function DoublyCircularLinkedList() {
     this.head = null;
     this.tail = null;
     this.length = 0;
-
-    function Node(v, nxt, prv) {
-        if ((typeof v === 'number') && ((nxt != null && nxt instanceof DoublyCircularLinkedList.Node) || nxt === null) && ((prv != null && prv instanceof DoublyCircularLinkedList.Node) || prv === null)) {
-            this.value = v;
-            this.next = nxt;
-            this.prev = prv;
-        }
-        else if ((typeof v === 'number') && nxt === undefined && prv === undefined) {
-            this.value = v;
-            this.next = this;
-            this.prev = this;
-        }
-        else
-            throw new Error('invalid overload');
-    }
-
-    DoublyCircularLinkedList.Node = Node;
 }
 
 DoublyCircularLinkedList.prototype.size = function () {
@@ -36,7 +25,7 @@ DoublyCircularLinkedList.prototype.peekHead = function () {
 };
 
 DoublyCircularLinkedList.prototype.addHead = function (value) {
-    var newNode = new DoublyCircularLinkedList.Node(value, null, null);
+    var newNode = new DoublyCircularLinkedListNode(value, null, null);
     if (this.length === 0) {
         this.tail = this.head = newNode;
         newNode.next = newNode;
@@ -53,7 +42,7 @@ DoublyCircularLinkedList.prototype.addHead = function (value) {
 };
 
 DoublyCircularLinkedList.prototype.addTail = function (value) {
-    var newNode = new DoublyCircularLinkedList.Node(value, null, null);
+    var newNode = new DoublyCircularLinkedListNode(value, null, null);
     if (this.length === 0) {
         this.head = this.tail = newNode;
         newNode.next = newNode;

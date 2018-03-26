@@ -1,24 +1,24 @@
-function main10() {
+function main1() {
 	var temp = 100;
 	var temp2 = temp;
 	temp2 = "Hello, World!";
 	temp2 = true;
 }
 
-console.log(typeof(temp));
-console.log(typeof(temp2));
-console.log(typeof(temp2));
-console.log(typeof(temp2));
+console.log(typeof (temp));
+console.log(typeof (temp2));
+console.log(typeof (temp2));
+console.log(typeof (temp2));
 
 
 
-main10();
+main1();
 
 function increment(value) {
 	value++;
 };
 
-function main1() {
+function main2() {
 	var i = 10;
 	console.log("Value of i before increment is :  " + i);
 	increment(i);
@@ -36,7 +36,7 @@ function increment2(data) {
 		throw new Error('invalid overload');
 };
 
-function main878() {
+function main3() {
 	var i = new MyInt;
 	i.value = 10;
 	console.log("Value of i before increment is :  " + i.value);
@@ -68,7 +68,7 @@ function permutation(arr, i, length) {
 	}
 };
 
-function main7979() {
+function main4() {
 	var arr = new Array(5);
 	for (var i = 0; i < 5; i++) {
 		arr[i] = i;
@@ -95,10 +95,10 @@ function towerOfHanoi(num, src, dst, temp) {
 	towerOfHanoi(num - 1, temp, dst, src);
 };
 
-function main8768() {
+function main5() {
 	var num = 4;
 	console
-			.info("The sequence of moves involved in the Tower of Hanoi are :\n");
+		.info("The sequence of moves involved in the Tower of Hanoi are :\n");
 	towerOfHanoi(num, 'A', 'C', 'B');
 	return 0;
 };
@@ -111,7 +111,7 @@ function function1() {
 	function2();
 	console.log("fun1 line 2");
 };
-function mainrwe() {
+function main6() {
 	console.log("main line 1");
 	function1();
 	console.log("main line 2");
@@ -133,8 +133,8 @@ function maxSubArraySum(a) {
 	return maxSoFar;
 };
 
-function main989() {
-	var arr = [ 1, -2, 3, 4, -4, 6, -4, 8, 2 ];
+function main7() {
+	var arr = [1, -2, 3, 4, -4, 6, -4, 8, 2];
 	console.log(maxSubArraySum(arr));
 }
 
@@ -145,7 +145,7 @@ function variableExample() {
 	console.log("Adding " + var1 + " and " + var2 + " will give " + var3);
 };
 
-function main433() {
+function main8() {
 	arrayExample();
 }
 
@@ -182,7 +182,7 @@ function print2DArray(arr, row, col) {
 	}
 };
 
-function main545() {
+function main9() {
 	twoDArrayExample();
 }
 
@@ -196,8 +196,8 @@ function SumArray(arr) {
 	return total;
 };
 
-function main898() {
-	var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+function main10() {
+	var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	var sum = 0;
 	sum = SumArray(numbers);
 	console.log("Sum is :: " + sum);
@@ -236,8 +236,8 @@ function BinarySearch(arr, value) {
 	return -1;
 };
 
-function main9999() {
-	var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+function main11() {
+	var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	console.log(SequentialSearch(numbers, 7));
 	console.log(BinarySearch(numbers, 7));
 	console.log(BinarySearchRecursive(numbers, 7));
@@ -254,8 +254,8 @@ function rotateArray(a, n, k) {
 
 function reverseArray(a, start, end) {
 	if ((a != null && a instanceof Array) && (typeof start === 'number')
-			&& (typeof end === 'number')) {
-		for (var i = start, j = end; i < j; i++, j--) {
+		&& (typeof end === 'number')) {
+		for (var i = start, j = end; i < j; i++ , j--) {
 			var temp = a[i];
 			a[i] = a[j];
 			a[j] = temp;
@@ -267,14 +267,14 @@ function reverseArray(a, start, end) {
 function reverseArray2(a) {
 	var start = 0;
 	var end = a.length - 1;
-	for (var i = start, j = end; i < j; i++, j--) {
+	for (var i = start, j = end; i < j; i++ , j--) {
 		var temp = a[i];
 		a[i] = a[j];
 		a[j] = temp;
 	}
 };
 
-function main2() {
+function main12() {
 	var point = new coord(this);
 	point.x = 10;
 	point.y = 10;
@@ -283,7 +283,7 @@ function main2() {
 	return 0;
 };
 
-function main3() {
+function main13() {
 	var stud = new student(this);
 	var refStud;
 	refStud = stud;
@@ -291,11 +291,11 @@ function main3() {
 	refStud.firstName = "john";
 	refStud.lastName = "smith";
 	console.log("Roll No:   Student Name:  " + refStud.rollNo
-			+ refStud.firstName + refStud.lastName);
+		+ refStud.firstName + refStud.lastName);
 	return 0;
 };
 
-function main4() {
+function main14() {
 	var x = 10;
 	var y = 20;
 	var result;
@@ -326,7 +326,7 @@ function printInt1(number) {
 	console.log(digit);
 };
 
-function main4322() {
+function main15() {
 	printInt1(50);
 	console.log(printHaxInt(121, 16));
 }
@@ -354,7 +354,7 @@ function fibonacci(n) {
 	return fibonacci(n - 1) + fibonacci(n - 2);
 };
 
-function fibonacci2 (n) {
+function fibonacci2(n) {
 	var first = 0, second = 1;
 	var temp, i;
 
@@ -363,8 +363,7 @@ function fibonacci2 (n) {
 	else if (n === 1)
 		return second;
 
-	for (i = 2; i <= n; i++)
-	{
+	for (i = 2; i <= n; i++) {
 		temp = first + second;
 		first = second;
 		second = temp;
@@ -376,13 +375,13 @@ console.log(fibonacci(6));
 console.log(fibonacci2(6));
 
 function BinarySearchRecursive(arr, value) {
-	return BinarySearchRecursiveUtil(arr,0, arr.length -1, value);
+	return BinarySearchRecursiveUtil(arr, 0, arr.length - 1, value);
 }
 
 function BinarySearchRecursiveUtil(arr, low, high, value) {
-	if(low > high)
+	if (low > high)
 		return -1;
-	
+
 	var mid = low + Math.floor((high - low) / 2);
 	if (arr[mid] === value) {
 		return mid;
@@ -402,4 +401,4 @@ function student() {
 	this.rollNo = 0;
 }
 
-main(null);
+main();

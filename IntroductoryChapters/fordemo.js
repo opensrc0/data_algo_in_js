@@ -32,7 +32,7 @@ function main2() {
     console.log("Sum is :: " + sum);
 };
 
-function main3(args) {
+function main3() {
     var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     var sum = 0;
     var i = 0;
@@ -42,7 +42,8 @@ function main3(args) {
     };
     console.log("Sum is :: " + sum);
 };
+
 main();
-main1(null);
-main2(null);
-main3(null);
+main1();
+main2();
+main3();

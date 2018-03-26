@@ -33,7 +33,7 @@ function compare(x, y) {
 	}
 }
 
-Graph.prototype.AddEdge = function(source, destination, cost) {
+Graph.prototype.AddEdge = function (source, destination, cost) {
 	if (cost === void 0) {
 		cost = 1;
 	}
@@ -42,7 +42,7 @@ Graph.prototype.AddEdge = function(source, destination, cost) {
 	this.array[source].head = node;
 };
 
-Graph.prototype.AddBiEdge = function(source, destination, cost) {
+Graph.prototype.AddBiEdge = function (source, destination, cost) {
 	if (cost === void 0) {
 		cost = 1;
 	}
@@ -50,7 +50,7 @@ Graph.prototype.AddBiEdge = function(source, destination, cost) {
 	this.AddEdge(destination, source, cost);
 };
 
-Graph.prototype.Print = function() {
+Graph.prototype.Print = function () {
 	var ad;
 	for (var i = 0; i < this.count; i++) {
 		ad = this.array[i].head;
@@ -65,7 +65,7 @@ Graph.prototype.Print = function() {
 	}
 };
 
-Graph.Dijkstra = function(gph, source) {
+Graph.Dijkstra = function (gph, source) {
 	var previous = new Array(gph.count);
 	var dist = new Array(gph.count);
 	for (var i = 0; i < gph.count; i++) {
@@ -96,15 +96,15 @@ Graph.Dijkstra = function(gph, source) {
 	for (var i = 0; i < count; i++) {
 		if (dist[i] === MAX_VALUE) {
 			console.log(" node id " + i + "  prev " + previous[i]
-					+ " distance : Unreachable");
+				+ " distance : Unreachable");
 		} else {
 			console.log(" node id " + i + "  prev " + previous[i]
-					+ " distance : " + dist[i]);
+				+ " distance : " + dist[i]);
 		}
 	}
 };
 
-Graph.Prims = function(gph) {
+Graph.Prims = function (gph) {
 	var previous = new Array(gph.count);
 	var dist = new Array(gph.count);
 	var source = 1;
@@ -137,17 +137,17 @@ Graph.Prims = function(gph) {
 	for (var i = 0; i < count; i++) {
 		if (dist[i] === MAX_VALUE) {
 			console.log(" node id " + i + "  prev " + previous[i]
-					+ " distance : Unreachable");
+				+ " distance : Unreachable");
 		} else {
 			console.log(" node id " + i + "  prev " + previous[i]
-					+ " distance : " + dist[i]);
+				+ " distance : " + dist[i]);
 		}
 	}
 };
 
 
 
-Graph.TopologicalSort = function(gph) {
+Graph.TopologicalSort = function (gph) {
 	var stk = [];
 	var count = gph.count;
 	var visited = new Array(count);
@@ -165,7 +165,7 @@ Graph.TopologicalSort = function(gph) {
 	};
 };
 
-Graph.TopologicalSortDFS = function(gph, index, visited, stk) {
+Graph.TopologicalSortDFS = function (gph, index, visited, stk) {
 	var head = gph.array[index].head;
 	while ((head != null)) {
 		if (visited[head.destination] === 0) {
@@ -177,7 +177,7 @@ Graph.TopologicalSortDFS = function(gph, index, visited, stk) {
 	stk.push(index);
 };
 
-Graph.PathExist = function(gph, source, destination) {
+Graph.PathExist = function (gph, source, destination) {
 	var count = gph.count;
 	var visited = new Array(count);
 	for (var i = 0; i < count; i++) {
@@ -188,7 +188,7 @@ Graph.PathExist = function(gph, source, destination) {
 	return visited[destination];
 };
 
-Graph.DFSStack = function(gph, index) {
+Graph.DFSStack = function (gph, index) {
 	var count = gph.count;
 	var visited = new Array(count);
 	var curr;
@@ -214,7 +214,7 @@ Graph.DFSStack = function(gph, index) {
 };
 
 
-Graph.DFSRec = function(gph, index) {
+Graph.DFSRec = function (gph, index) {
 	var count = gph.count;
 	var visited = new Array(count);
 	for (var i = 0; i < count; i++) {
@@ -225,7 +225,7 @@ Graph.DFSRec = function(gph, index) {
 	Graph.DFSRecUtil(gph, index, visited);
 };
 
-Graph.DFSRecUtil = function(gph, index, visited) {
+Graph.DFSRecUtil = function (gph, index, visited) {
 	var head = gph.array[index].head;
 	while ((head != null)) {
 		if (visited[head.destination] === 0) {
@@ -239,7 +239,7 @@ Graph.DFSRecUtil = function(gph, index, visited) {
 
 
 
-Graph.BFS = function(gph, index) {
+Graph.BFS = function (gph, index) {
 	var count = gph.count;
 	var visited = new Array(count);
 	for (var i = 0; i < count; i++) {
@@ -265,7 +265,7 @@ Graph.BFS = function(gph, index) {
 	};
 };
 
-Graph.isConnected = function(gph) {
+Graph.isConnected = function (gph) {
 	var count = gph.count;
 	var visited = new Array(count);
 	for (var i = 0; i < count; i++) {
@@ -283,7 +283,7 @@ Graph.isConnected = function(gph) {
 	return true;
 };
 
-Graph.ShortestPath = function(gph, source) {
+Graph.ShortestPath = function (gph, source) {
 	var curr;
 	var count = gph.count;
 	var distance = new Array(count);
@@ -311,7 +311,7 @@ Graph.ShortestPath = function(gph, source) {
 	}
 };
 
-Graph.prototype.BellmanFordShortestPath = function(gph, source) {
+Graph.prototype.BellmanFordShortestPath = function (gph, source) {
 	var count = gph.count;
 	var distance = new Array(count);
 	var path = new Array(count);
@@ -337,7 +337,7 @@ Graph.prototype.BellmanFordShortestPath = function(gph, source) {
 	}
 };
 
-Graph.main = function(args) {
+function main(args) {
 	var gph = new Graph(9);
 	gph.AddBiEdge(0, 2, 1);
 	gph.AddBiEdge(1, 2, 5);
@@ -360,7 +360,7 @@ Graph.main = function(args) {
 	Graph.isConnected(gph);
 };
 
-Graph.main2 = function(args) {
+function main2(args) {
 	var g = new Graph(6);
 	g.AddEdge(5, 2);
 	g.AddEdge(5, 0);
@@ -372,5 +372,5 @@ Graph.main2 = function(args) {
 	Graph.TopologicalSort(g);
 };
 
-Graph.main(null);
-Graph.main2(null);
+main(null);
+main2(null);

@@ -26,11 +26,7 @@ BucketSort.prototype.sort = function () {
     }
 };
 
-function main(args) {
-    var array = [23, 24, 22, 21, 26, 25, 27, 28, 21, 21];
-    var m = new BucketSort(array, 20, 30);
-    m.sort();
-    console.log(array);
-};
-
-main(null);
+var array = [23, 24, 22, 21, 26, 25, 27, 28, 21, 21];
+var m = new BucketSort(array, 20, 30);
+m.sort();
+console.log(array);

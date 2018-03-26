@@ -1,5 +1,4 @@
 function HashTable() {
-    this.tableSize = 0;
     this.tableSize = 512;
     this.listArray = new Array(this.tableSize);
     for (var i = 0; i < this.tableSize; i++) {
@@ -76,15 +75,11 @@ HashTable.prototype.find = function (value) {
     return false;
 };
 
-HashTable.main = function (args) {
-    var ht = new HashTable();
-    for (var i = 100; i < 110; i++) {
-        ht.insert(i);
-    }
-    console.log("search 100 :: " + ht.find(100));
-    console.log("remove 100 :: " + ht.delete(100));
-    console.log("search 100 :: " + ht.find(100));
-    console.log("remove 100 :: " + ht.delete(100));
-};
-
-HashTable.main(null);
+var ht = new HashTable();
+for (var i = 100; i < 110; i++) {
+    ht.insert(i);
+}
+console.log("search 100 :: " + ht.find(100));
+console.log("remove 100 :: " + ht.delete(100));
+console.log("search 100 :: " + ht.find(100));
+console.log("remove 100 :: " + ht.delete(100));

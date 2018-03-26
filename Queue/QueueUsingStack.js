@@ -19,21 +19,18 @@ Queue.prototype.remove = function () {
     return this.stk2.pop();
 };
 
-Queue.prototype.main = function (args) {
-    var que = new Queue();
-    que.add(1);
-    que.add(11);
-    que.add(111);
-    console.log(que.remove());
-    que.add(2);
-    que.add(21);
-    que.add(211);
-    console.log(que.remove());
-    console.log(que.remove());
-    console.log(que.remove());
-    console.log(que.remove());
-    console.log(que.remove());
-    console.log(que.remove());
-    console.log(que.remove());
-};
-
+var que = new Queue();
+que.add(1);
+que.add(11);
+que.add(111);
+console.log(que.remove());
+que.add(2);
+que.add(21);
+que.add(211);
+console.log(que.remove());
+console.log(que.remove());
+console.log(que.remove());
+console.log(que.remove());
+console.log(que.remove());
+console.log(que.remove());
+console.log(que.remove());

@@ -1,13 +1,11 @@
+function StackNode(v, n) {
+    this.value = v;
+    this.next = n;
+}
+
 function Stack() {
     this.head = null;
     this.length = 0;
-
-    function Node(v, n) {
-        this.value = v;
-        this.next = n;
-    }
-
-    Stack.Node = Node;
 }
 
 Stack.prototype.size = function () {
@@ -26,7 +24,7 @@ Stack.prototype.peek = function () {
 };
 
 Stack.prototype.push = function (value) {
-    this.head = new Stack.Node(value, this.head);
+    this.head = new StackNode(value, this.head);
     this.length++;
 };
 
@@ -59,15 +57,11 @@ Stack.prototype.print = function () {
     };
 };
 
-Stack.main = function (args) {
-    var s = new Stack();
-    for (var i = 1; i <= 100; i++) {
-        s.push(i);
-    }
-    for (var i = 1; i <= 50; i++) {
-        s.pop();
-    }
-    s.print();
-};
-
-Stack.main(null);
+var s = new Stack();
+for (var i = 1; i <= 100; i++) {
+    s.push(i);
+}
+for (var i = 1; i <= 50; i++) {
+    s.pop();
+}
+s.print();

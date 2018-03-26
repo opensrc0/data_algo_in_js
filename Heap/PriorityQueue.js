@@ -1,14 +1,14 @@
-defaultCmp = function (x, y) {
+function defaultCmp(x, y) {
     return x - y;
 };
 
 function PriorityQueue(array, cmp) {
     this.comp = (typeof cmp === 'function' && cmp != null) ? cmp : defaultCmp;
-    
+
     if (array != null && array instanceof Array) {
         this.length = array.length;
         this.arr = [0].concat(array);
-        for (var i = Math.floor(this.length / 2) ; i > 0; i--) {
+        for (var i = Math.floor(this.length / 2); i > 0; i--) {
             this.proclateDown(i);
         }
     }
@@ -98,16 +98,12 @@ PriorityQueue.HeapSort = function (array, cmp) {
     }
 };
 
-comp1 = function (x, y) {
+function comp1(x, y) {
     return x - y;
 };
 
-PriorityQueue.main = function (args) {
-    var a = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
-    var hp = new PriorityQueue(a, comp1);
-    hp.print();
-    PriorityQueue.HeapSort(a, comp1);
-    console.info(a);
-};
-
-//PriorityQueue.main(null);
+var a = [1, 9, 6, 7, 8, 0, 2, 4, 5, 3];
+var hp = new PriorityQueue(a, comp1);
+hp.print();
+PriorityQueue.HeapSort(a, comp1);
+console.info(a);
