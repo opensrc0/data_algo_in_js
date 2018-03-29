@@ -80,10 +80,10 @@ Tree.prototype.printDepthFirst = function () {
         temp = stk.pop();
         console.log(temp.value);
 
-        if (temp.lChild != null)
-            stk.push(temp.lChild);
         if (temp.rChild != null)
             stk.push(temp.rChild);
+        if (temp.lChild != null)
+            stk.push(temp.lChild);
     }
 }
 
